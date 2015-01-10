@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashKLxx16K.out</exe>
+  <page>4</page>
+  <block>256 0x400</block>
+  <flash_base>0x00000000</flash_base>
+  <macro>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashKLxx.mac</macro>
+  <aggregate>1</aggregate>
+  <args_doc>--enable_config_write - allow programming of 0x40C - 0x40F with user supplied
+data, in other case flashloader afret erase of block 0 will write 0xFFFF_FFFE
+(unsecure state).</args_doc>
+</flash_device>

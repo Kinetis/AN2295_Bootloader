@@ -1,0 +1,19 @@
+8       [00000018]  IRP_MJ_READ                     Length: 0001, Data: FC 
+9       [00000019]  IRP_MJ_WRITE                    Length: 0001, Data: FC 
+10      [00000019]  IRP_MJ_READ                     Length: 0001, Data: FC 
+11      [00000019]  IRP_MJ_WRITE                    Length: 0001, Data: 49 
+12      [00000019]  IRP_MJ_READ                     Length: 0001, Data: C8 
+13      [00000019]  IRP_MJ_READ                     Length: 0001, Data: 05 
+14      [00000019]  IRP_MJ_READ                     Length: 0001, Data: 88 
+15      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 00 00 01 
+16      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 00 10 00 
+17      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 01 FF FF 
+18      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 00 10 00 
+19      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 00 00 00 
+20      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 00 04 00 
+21      [00000019]  IRP_MJ_READ                     Length: 0004, Data: 00 00 00 80 
+22      [00000019]  IRP_MJ_READ                     Length: 0001, Data: 78 
+23      [00000019]  IRP_MJ_READ                     Length: 0001, Data: 78 
+24      [00000019]  IRP_MJ_READ                     Length: 0001, Data: 78 
+25      [00000019]  IRP_MJ_READ                     Length: 0001, Data: 00 
+26      [00000019]  IRP_MJ_READ                     Length: 0002, Data: DB 17 

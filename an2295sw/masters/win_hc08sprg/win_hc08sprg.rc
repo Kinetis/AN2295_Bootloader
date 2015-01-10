@@ -1,0 +1,261 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Czech (Czech Republic) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
+LANGUAGE LANG_CZECH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)\r\n"
+    "LANGUAGE 5, 1\r\n"
+    "#pragma code_page(1250)\r\n"
+    "#include ""res\\win_hc08sprg.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\win_hc08sprg.ico"
+IDI_ICN_FREESCALE       ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WIN_HC08SPRG_DIALOG DIALOGEX 0, 0, 430, 269
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Freescale - Universal Bootloader  AN2295"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Exit",IDCANCEL,368,246,58,16
+    EDITTEXT        IDC_LOG,8,118,351,131,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL
+    COMBOBOX        IDC_COMBO_COMPORTS,7,10,298,121,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Rescan",IDC_BT_RESCAN,309,10,50,12
+    LTEXT           "Serial Comport selection",IDC_STATIC,7,1,78,8
+    COMBOBOX        IDC_COMBO_S19,7,32,298,115,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Open S19",IDC_BT_OPENS19,309,33,50,12
+    LTEXT           "S19 file selection",IDC_STATIC,7,23,54,8
+    PUSHBUTTON      "Erase",IDC_FL_ERASE,368,81,58,14
+    PUSHBUTTON      "Blank check",IDC_FL_BCHECK,368,99,58,14
+    PUSHBUTTON      "Program",IDC_FL_PROGRAM,368,118,58,14
+    PUSHBUTTON      "Compare",IDC_FL_COMPARE,368,138,58,14
+    PUSHBUTTON      "AutoProgram",IDC_FL_AUTOPROG,368,176,58,21
+    PUSHBUTTON      "Connect",IDC_CONNECT,368,51,58,25
+    COMBOBOX        IDC_COMBO_COMSPEED,368,10,58,170,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Bootloader protocol:",IDC_STATIC,14,74,66,8
+    LTEXT           "Not available",IDC_LbProtocVersion,83,74,273,8
+    LTEXT           "MCU info:",IDC_STATIC,14,82,32,8
+    LTEXT           "Not available",IDC_LbMcuInfoStr,83,82,273,8
+    LTEXT           "Memory:",IDC_STATIC,14,90,29,8
+    LTEXT           "Not available",IDC_LbMem,83,90,273,8
+    LTEXT           "Not available",IDC_LbFlashPrty,83,98,273,8
+    LTEXT           "Not available",IDC_LbVectors,83,106,273,8
+    LTEXT           "Flash Prty:",IDC_STATIC,13,98,36,8
+    LTEXT           "Int vectors:",IDC_STATIC,13,106,39,8
+    GROUPBOX        "Identification",IDC_STATIC,8,65,351,51
+    CONTROL         "Single Wire",IDC_CHECK_SINGLEW,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,369,26,58,10
+    EDITTEXT        IDC_EDIT_CHECKSUM,71,51,51,14,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Image Checksum:",IDC_STATIC,10,53,58,8
+    CONTROL         "AutoProgram Verify",IDC_CHECK_VERIFY,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,368,197,58,18
+    EDITTEXT        IDC_EDIT_CHECKSUM2,164,51,196,14,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Image Size:",IDC_STATIC,126,53,38,8
+    CONTROL         "",IDC_PB_PROGRESS,"msctls_progress32",WS_BORDER,8,251,351,11
+    ICON            IDI_ICN_FREESCALE,IDC_PICTURE,386,222,20,20
+    PUSHBUTTON      "Read",IDC_FL_READ,367,157,58,14
+    CONTROL         "Short TRIM",IDC_CHECK_SHORT_TRIM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,369,37,60,10,0,HIDC_CHECK_SHORT_TRIM
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Freescale Semiconductor"
+            VALUE "FileDescription", "Windows GUI of AN2295 Bootloader"
+            VALUE "FileVersion", "1.0.0.2"
+            VALUE "InternalName", "win_hc08sprg.exe"
+            VALUE "LegalCopyright", "Freescale Semiconductor 2011.  All rights reserved."
+            VALUE "OriginalFilename", "win_hc08sprg.exe"
+            VALUE "ProductName", "AN2295 Bootloader GUI"
+            VALUE "ProductVersion", "1.0.0.2"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_WIN_HC08SPRG_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_COMSPEED, 0x403, 3, 0
+0x3537, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 4, 0
+0x3131, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 4, 0
+0x3331, 0x0034, 
+    IDC_COMBO_COMSPEED, 0x403, 4, 0
+0x3531, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 4, 0
+0x3033, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 4, 0
+0x3036, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 5, 0
+0x3831, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 5, 0
+0x3834, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 5, 0
+0x3237, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 6, 0
+0x3431, 0x3034, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 6, 0
+0x3637, 0x3038, 0x0030, 
+    IDC_COMBO_COMSPEED, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    IDC_COMBO_COMSPEED, 0x403, 7, 0
+0x3231, 0x3038, 0x3030, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_WIN_HC08SPRG_DIALOG, DIALOG
+    BEGIN
+        TOPMARGIN, 1
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_ABOUTBOX            "&About win_hc08sprg..."
+END
+
+#endif    // Czech (Czech Republic) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
+LANGUAGE 5, 1
+#pragma code_page(1250)
+#include "res\win_hc08sprg.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

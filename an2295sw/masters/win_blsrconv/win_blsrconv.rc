@@ -1,0 +1,186 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Czech resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
+#ifdef _WIN32
+LANGUAGE LANG_CZECH, SUBLANG_DEFAULT
+#pragma code_page(1250)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)\r\n"
+    "LANGUAGE 5, 1\r\n"
+    "#pragma code_page(1250)\r\n"
+    "#include ""res\\win_blsrconv.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_FSL_ICON            ICON                    "res\\win_hc08sprg.ico"
+IDR_MAINFRAME           ICON                    "res\\win_blsrconv.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WIN_BLSRCONV_DIALOG DIALOGEX 0, 0, 392, 298
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Freescale - win_blsrconv"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Exit",IDCANCEL,335,271,50,20
+    COMBOBOX        IDC_COMBO_CTMS19,7,16,332,175,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "User Application S19 file",IDC_STATIC,7,7,78,8
+    PUSHBUTTON      "Open",IDC_BUTTON_OPENCTMS19,349,16,36,12
+    COMBOBOX        IDC_COMBO_BOOTS19,7,39,332,148,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Bootloader AN2295 S19 file",IDC_STATIC,7,30,88,8
+    PUSHBUTTON      "Open",IDC_BUTTON_OPENBOOTS19,349,39,36,12
+    PUSHBUTTON      "Convert",IDC_BUTTON_CONVERT,7,271,272,20
+    COMBOBOX        IDC_COMBO_MCUTYPE,51,79,189,178,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "MCU Type",IDC_STATIC,9,81,34,8
+    EDITTEXT        IDC_EDIT_ORIGVECT,359,81,26,14,ES_AUTOHSCROLL
+    LTEXT           "0x",IDC_STATIC,350,83,9,8
+    LTEXT           "Original Vector Table",IDC_STATIC,276,83,67,8
+    EDITTEXT        IDC_EDIT_REDIRVECT,359,99,26,14,ES_AUTOHSCROLL
+    LTEXT           "0x",IDC_STATIC,350,102,9,8
+    LTEXT           "Redirected Vector Table",IDC_STATIC,265,102,78,8
+    EDITTEXT        IDC_EDIT_LOG,7,116,378,152,ES_MULTILINE | ES_READONLY | WS_VSCROLL | WS_HSCROLL,WS_EX_STATICEDGE
+    LTEXT           "Output S19 file name",IDC_STATIC,7,52,68,8
+    EDITTEXT        IDC_EDIT_OUTS19,7,62,378,14,ES_AUTOHSCROLL
+    LTEXT           "Bootloader protocol",IDC_STATIC,9,96,39,19
+    COMBOBOX        IDC_COMBO_BOOTPROTO,51,98,189,120,CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "win_blsrconv.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "win_blsrconv.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_WIN_BLSRCONV_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 385
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 291
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Czech resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CSY)
+LANGUAGE 5, 1
+#pragma code_page(1250)
+#include "res\win_blsrconv.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

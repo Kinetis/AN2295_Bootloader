@@ -1,0 +1,38 @@
+/* Common Linker file for AN2295 Kinetis K and L Series */
+
+/*-Memory Regions-*/
+define symbol __ICFEDIT_region_ROM_start__      = 0x00000410;
+define symbol __ICFEDIT_region_ROM_end__        = 0x00000AFF; // 0x000004FF for 8K Flash devices
+define symbol __ICFEDIT_region_RAM_start__      = 0x1fffff00;
+define symbol __ICFEDIT_region_RAM_end__        = 0x1fffffff;
+define symbol __ICFEDIT_region_RAM1_start__     = 0x20000000;
+define symbol __ICFEDIT_region_RAM1_end__       = 0x200001ff;
+define symbol IntVectTable_start__              = 0x00000000;
+define symbol IntVectTable_end__                = 0x0000003f;
+define symbol FlashConfig_start__               = 0x00000400;
+define symbol FlashConfig_end__                 = 0x0000040f;
+
+define exported symbol __BOOT_STACK_ADDRESS = __ICFEDIT_region_RAM1_end__ - 7;
+
+define memory mem with size = 4G;
+define region ROM_region                = mem:[from (IntVectTable_end__ + 1) to (FlashConfig_start__ - 1)] | [from (FlashConfig_end__+1)  to __ICFEDIT_region_ROM_end__];
+define region RAM_region                = mem:[from __ICFEDIT_region_RAM_start__   to __ICFEDIT_region_RAM_end__];
+define region RAM1_region               = mem:[from __ICFEDIT_region_RAM1_start__   to __ICFEDIT_region_RAM1_end__];
+define region IntVectTable_region       = mem:[from IntVectTable_start__ to IntVectTable_end__];
+define region FlashConfig_region        = mem:[from FlashConfig_start__ to FlashConfig_end__];
+
+do not initialize { readwrite };
+do not initialize { readonly };
+initialize manually { section .data};
+initialize manually { section .textrw };
+keep { section .IntVectTable };
+do not initialize { section .FlashConfig };
+do not initialize  { section .noinit };
+
+
+place in ROM_region             { readonly };
+place in RAM1_region            { readwrite};
+place in RAM_region             { section codeRam};
+place in IntVectTable_region    { section IntVectTable};
+place in FlashConfig_region     { section FlashConfig};
+                      

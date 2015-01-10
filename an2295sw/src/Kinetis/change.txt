@@ -1,0 +1,1 @@
+uVision4 vypisuje chybu inline assebleru v bootloader.c

@@ -1,0 +1,26 @@
+                                                .extern      start            
+
+                                                .global      startup          
+                                                .global      __startup        
+                                                .text                         
+
+                             startup                                          
+                             __startup                                        
+0x00000000: 4ff00000                            mov          r0,#0            
+0x00000004: 4ff00001                            mov          r1,#0            
+0x00000008: 4ff00002                            mov          r2,#0            
+0x0000000c: 4ff00003                            mov          r3,#0            
+0x00000010: 4ff00004                            mov          r4,#0            
+0x00000014: 4ff00005                            mov          r5,#0            
+0x00000018: 4ff00006                            mov          r6,#0            
+0x0000001c: 4ff00007                            mov          r7,#0            
+0x00000020: 4ff00008                            mov          r8,#0            
+0x00000024: 4ff00009                            mov          r9,#0            
+0x00000028: 4ff0000a                            mov          r10,#0           
+0x0000002c: 4ff0000b                            mov          r11,#0           
+0x00000030: 4ff0000c                            mov          r12,#0           
+0x00000034: 62b6                                cpsie        i                
+0x00000036: fff7feff                            bl           start            
+                             done                                             
+0x0000003a: fff7febf                            b            done             
+                                                .end                          

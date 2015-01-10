@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashMT64.flash</loader>
+    <range>CODE 0x0 0xffff</range>
+    <args>--enable_config_write</args>
+  </pass>
+</flash_board>
+
+

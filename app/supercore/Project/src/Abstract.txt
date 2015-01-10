@@ -1,0 +1,47 @@
+超核V2.4 KL 固件库
+
+库函数版本: 超核KL  V2.40 版本
+淘宝       http://upcmcu.taobao.com 
+
+
+适用的处理器
+**     Processors:          MKL25Z128FM4
+**                          MKL25Z128FT4
+**                          MKL25Z128LH4
+**                          MKL25Z128VLK4
+
+包含的构件:
+sys: 
+包含芯片频率设置 常用宏 既是其他构件的支持构件也是芯片启动配置文件 必选
+
+gpio:
+通用输入输出模块 构件
+
+delay:
+延时构件
+
+uart: 
+串口构件
+
+i2c : 
+i2C 构件
+
+dma : 
+dma构件
+
+spi:
+spi构件
+
+adc:
+adc构件
+
+
+硬件测试固件
+mag3110:  磁场传感器 i2C 接口
+led    :  LED  GPIO接口
+at24cxx:  EEPORM i2C 接口
+spiflash: SPI接口 flash
+
+
+
+
