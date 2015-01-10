@@ -1,0 +1,9 @@
+.\kinetis_ke02\rs232.o: ..\CommonSource\rs232\rs232.c
+.\kinetis_ke02\rs232.o: ..\CommonSource\bootloader\kinetis_params.h
+.\kinetis_ke02\rs232.o: ..\CommonSource\bootloader_cfg.h
+.\kinetis_ke02\rs232.o: ..\CommonSource\AN2295_FRDM_KE02Z_cfg.h
+.\kinetis_ke02\rs232.o: ..\CommonSource\main.h
+.\kinetis_ke02\rs232.o: ..\CommonSource\headers\MKE02Z2.h
+.\kinetis_ke02\rs232.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\kinetis_ke02\rs232.o: ..\CommonSource\wdg\wdg.h
+.\kinetis_ke02\rs232.o: ..\CommonSource\rs232\rs232.h

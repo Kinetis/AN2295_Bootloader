@@ -14,14 +14,14 @@
 //KL1_48MHz
 //KL2_48MHz KL25_48MHz
 
+#include "MKE02Z2.h"
+
 
 #define KINETIS_MODEL KE02_20MHz
 
-/*  in the case of using USB VIRTUAL SERIAL LINK you must activate No break TRIM CHECKBOX in the master AN2295 PC Application  */
-/*  the break impulse is replaced by using only 9 bits zero impulse  */
-//  BREAK IMPULSE       |START| |0| |0| |0| |0| |0| |0| |0| |0| |0| |0| STOP|
-//  ZERO IMPULSE        |START| |0| |0| |0| |0| |0| |0| |0| |0| |0| |STOP|
-#define BOOTLOADER_SHORT_TRIM  1
+#define FLASH_PROT_SECTION (0x1000)
+
+#define BOOT_BUS_CLOCK     (31250*640)
 
 /** Kinetis Flash memory size */
 
@@ -80,6 +80,28 @@
 /**************************************************/
 /** CALIBRATION OF BOOTLOADER TRIM SETTINGS */
 #define BOOT_CALIBRATION_GPIO_BASE  PTA_BASE_PTR
+
+/* Description string */
+#define KINETIS_MODEL_STR "KE0"
+
+//Register
+
+  // Bus clock frequency
+  
+  #define SRS_REG               (SIM_SRSID)
+  #define SRS_POR_MASK          SIM_SRSID_POR_MASK
+  
+  #define FLASH_INIT_FLASH_CLOCK        FTMRH_FCLKDIV = 0x93;//SIM_CLKDIV1 |= SIM_CLKDIV1_OUTDIV4(2);
+  #define FLASH_BASE_PTR                FTMRH_BASE_PTR
+  #define FLASH_FSTAT                   FTMRH_FSTAT                                  
+  #define FLASH_FSTAT_CCIF_MASK         FTMRH_FSTAT_CCIF_MASK
+  #define FLASH_FSTAT_ACCERR_MASK       FTMRH_FSTAT_ACCERR_MASK
+  #define FLASH_FSTAT_FPVIOL_MASK       FTMRH_FSTAT_FPVIOL_MASK
+                          
+  
+  #define FLASH_PROGRAM                 FLASH_ProgramSectionByLongs                                  
+                                   
+  #define INIT_CLOCKS_TO_MODULES    SIM_SCGC |= SIM_SCGC_UART1_MASK;
 /******************************************************************************
 *
 *
@@ -89,20 +111,24 @@
 ******************************************************************************/
 
 
+#define WDG_Disable();		WDOG_CS1 = 0x20;WDOG_CS2 = 0;WDOG_TOVALH = 0xFF; WDOG_TOVALL = 0xFF; WDOG_WINH = 0xFF; WDOG_WINL = 0xFF; WDOG_CS2 = 0x20;
+#define WDG_Enable(); 
+
+
 /* Flash block count of this MCU */
-//#define FLASH_BLOCK_CNT 1
+#define FLASH_BLOCK_CNT 1
 
 /* Start address of interrupt vector table */ 
-//#define INTERRUPT_VECTORS 0x0000
+#define INTERRUPT_VECTORS 0x0000
 
 /* Start address of relocated interrutp vector table */
-//#define RELOCATED_VECTORS 0x4000 
+#define RELOCATED_VECTORS 0x1000 
 
 /* Flash start address */
-//#define USER_FLASH_START RELOCATED_VECTORS
+#define USER_FLASH_START RELOCATED_VECTORS
 
 /* Flash end address */
-//#define USER_FLASH_END 0x0003FFFF
+#define USER_FLASH_END (KINETIS_FLASH - 1)
 
 /* Flash2 start address */
 //#define USER_FLASH_START_2 0x00040000
@@ -111,13 +137,12 @@
 //#define USER_FLASH_END_2 0x0005FFFF
 
 /* Size of write block */
-//#define FLASH_WRITE_PAGE 128
+#define FLASH_WRITE_PAGE 128
 
 /* Size of erase block */
-//#define FLASH_ERASE_PAGE 2048
+#define FLASH_ERASE_PAGE 512
 
 /* Maximal length of ID_STRING */
 //#define ID_STRING_MAX 5
 
-/* Description string */
-//#define KINETIS_MODEL_STR "K53"
+

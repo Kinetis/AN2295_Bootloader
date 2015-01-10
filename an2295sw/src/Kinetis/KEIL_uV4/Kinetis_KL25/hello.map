@@ -1,0 +1,279 @@
+ARM Linker, 5.03 [Build 76] [MDK-ARM Professional]
+
+==============================================================================
+
+Section Cross References
+
+    bootloader.o(i.ReadAddress) refers to rs232.o(i.UART_GetChar) for UART_GetChar
+    bootloader.o(i.ReadAddress) refers to bootloader.o(.data) for .data
+    bootloader.o(i.ReadCrc) refers to rs232.o(i.UART_GetChar) for UART_GetChar
+    bootloader.o(i.ReadCrc) refers to bootloader.o(.data) for .data
+    bootloader.o(i.SendResult) refers to rs232.o(i.UART_PutChar) for UART_PutChar
+    bootloader.o(i.SendResultCRC) refers to bootloader.o(i.SendResult) for SendResult
+    bootloader.o(i.SendResultCRC) refers to rs232.o(i.UART_PutChar) for UART_PutChar
+    bootloader.o(i.__main) refers to rs232.o(i.UART_Initialization) for UART_Initialization
+    bootloader.o(i.__main) refers to bootloader.o(i.SendResult) for SendResult
+    bootloader.o(i.__main) refers to rs232.o(i.UART_GetChar) for UART_GetChar
+    bootloader.o(i.__main) refers to bootloader.o(i.Boot_ResetMCU) for Boot_ResetMCU
+    bootloader.o(i.__main) refers to flash_kinetis.o(i.FLASH_Initialization) for FLASH_Initialization
+    bootloader.o(i.__main) refers to crc.o(i.CRC_AddByte) for CRC_AddByte
+    bootloader.o(i.__main) refers to bootloader.o(i.ReadCrc) for ReadCrc
+    bootloader.o(i.__main) refers to bootloader.o(i.SendResultCRC) for SendResultCRC
+    bootloader.o(i.__main) refers to rs232.o(i.UART_PutChar) for UART_PutChar
+    bootloader.o(i.__main) refers to bootloader.o(i.ReadAddress) for ReadAddress
+    bootloader.o(i.__main) refers to crc.o(i.CRC_AddLong) for CRC_AddLong
+    bootloader.o(i.__main) refers to flash_kinetis.o(i.FLASH_EraseSector) for FLASH_EraseSector
+    bootloader.o(i.__main) refers to flash_kinetis.o(i.FLASH_ProgramSectionByLongs) for FLASH_ProgramSectionByLongs
+    bootloader.o(i.__main) refers to bootloader_asm.o(.text) for JumpToUserApplication
+    bootloader.o(i.__main) refers to bootloader.o(.data) for .data
+    bootloader.o(i.__main) refers to crc.o(.data) for crc
+    bootloader.o(i.__main) refers to bootloader.o(.constdata) for .constdata
+    bootloader.o(i.__main) refers to bootloader.o(.bss) for .bss
+    bootloader.o(.IntVectTable) refers to linker_symbols.o(BOOT_STACK) for __BOOT_STACK_ADDRESS
+    bootloader.o(.IntVectTable) refers to bootloader.o(i.__main) for __main
+    bootloader.o(.IntVectTable) refers to bootloader.o(i.Boot_ResetMCU) for Boot_ResetMCU
+    crc.o(i.CRC_AddByte) refers to crc.o(.data) for .data
+    crc.o(i.CRC_AddLong) refers to crc.o(i.CRC_AddByte) for CRC_AddByte
+    rs232.o(i.UART_Initialization) refers to rs232.o(i.UART_GetChar) for UART_GetChar
+    flash_kinetis.o(i.FLASH_EraseSector) refers to flash_kinetis.o(.bss) for .bss
+    flash_kinetis.o(i.FLASH_EraseSector) refers to flash_kinetis.o(.codeRam) for .codeRam
+    flash_kinetis.o(i.FLASH_Initialization) refers to flash_kinetisramfunc.o(i.FLASH_FlashCommandSequenceStart) for FLASH_FlashCommandSequenceStart
+    flash_kinetis.o(i.FLASH_Initialization) refers to flash_kinetis.o(.codeRam) for .codeRam
+    flash_kinetis.o(i.FLASH_ProgramLongWord) refers to flash_kinetis.o(.bss) for .bss
+    flash_kinetis.o(i.FLASH_ProgramLongWord) refers to flash_kinetis.o(.codeRam) for .codeRam
+    flash_kinetis.o(i.FLASH_ProgramPhrase) refers to flash_kinetis.o(.bss) for .bss
+    flash_kinetis.o(i.FLASH_ProgramPhrase) refers to flash_kinetis.o(.codeRam) for .codeRam
+    flash_kinetis.o(i.FLASH_ProgramSectionByLongs) refers to flash_kinetis.o(i.FLASH_ProgramLongWord) for FLASH_ProgramLongWord
+    flash_kinetis.o(i.FLASH_ProgramSectionByPhrases) refers to flash_kinetis.o(i.FLASH_ProgramPhrase) for FLASH_ProgramPhrase
+    flash_kinetisramfunc.o(i.FLASH_FlashCommandSequenceStart) refers to flash_kinetis.o(.bss) for CommandObj
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    .IntVectTable                            0x00000000   Section       64  bootloader.o(.IntVectTable)
+    ..\CommonSource\bootloader\bootloader.c  0x00000000   Number         0  bootloader.o ABSOLUTE
+    ..\CommonSource\bootloader\bootloader_asm.s 0x00000000   Number         0  bootloader_asm.o ABSOLUTE
+    ..\CommonSource\crc\crc.c                0x00000000   Number         0  crc.o ABSOLUTE
+    ..\CommonSource\flash\flash_kinetis.c    0x00000000   Number         0  flash_kinetis.o ABSOLUTE
+    ..\CommonSource\flash\flash_kinetisRamFunc.c 0x00000000   Number         0  flash_kinetisramfunc.o ABSOLUTE
+    ..\CommonSource\rs232\rs232.c            0x00000000   Number         0  rs232.o ABSOLUTE
+    __tagsym$$used                           0x00000000   Number         0  bootloader.o(.IntVectTable)
+    linker_symbols.s                         0x00000000   Number         0  linker_symbols.o ABSOLUTE
+    .text                                    0x00000040   Section       10  bootloader_asm.o(.text)
+    i.CRC_AddByte                            0x0000004c   Section        0  crc.o(i.CRC_AddByte)
+    i.CRC_AddLong                            0x0000007c   Section        0  crc.o(i.CRC_AddLong)
+    i.FLASH_FlashCommandSequenceStart        0x000000a0   Section        0  flash_kinetisramfunc.o(i.FLASH_FlashCommandSequenceStart)
+    i.FLASH_Initialization                   0x000000e4   Section        0  flash_kinetis.o(i.FLASH_Initialization)
+    i.FLASH_ProgramLongWord                  0x00000104   Section        0  flash_kinetis.o(i.FLASH_ProgramLongWord)
+    i.FLASH_ProgramSectionByPhrases          0x0000011c   Section        0  flash_kinetis.o(i.FLASH_ProgramSectionByPhrases)
+    i.ReadAddress                            0x00000188   Section        0  bootloader.o(i.ReadAddress)
+    ReadAddress                              0x00000189   Thumb Code    30  bootloader.o(i.ReadAddress)
+    i.ReadCrc                                0x000001ac   Section        0  bootloader.o(i.ReadCrc)
+    ReadCrc                                  0x000001ad   Thumb Code    18  bootloader.o(i.ReadCrc)
+    i.UART_GetChar                           0x000001c4   Section        0  rs232.o(i.UART_GetChar)
+    i.UART_Initialization                    0x000001d4   Section        0  rs232.o(i.UART_Initialization)
+    .FlashConfig                             0x00000400   Section       16  bootloader.o(.FlashConfig)
+    __tagsym$$used                           0x00000400   Number         0  bootloader.o(.FlashConfig)
+    i.Boot_ResetMCU                          0x00000410   Section        0  bootloader.o(i.Boot_ResetMCU)
+    i.FLASH_EraseSector                      0x00000420   Section        0  flash_kinetis.o(i.FLASH_EraseSector)
+    i.FLASH_ProgramPhrase                    0x00000438   Section        0  flash_kinetis.o(i.FLASH_ProgramPhrase)
+    i.FLASH_ProgramSectionByLongs            0x00000458   Section        0  flash_kinetis.o(i.FLASH_ProgramSectionByLongs)
+    i.SendResult                             0x0000047c   Section        0  bootloader.o(i.SendResult)
+    SendResult                               0x0000047d   Thumb Code    18  bootloader.o(i.SendResult)
+    i.SendResultCRC                          0x0000048e   Section        0  bootloader.o(i.SendResultCRC)
+    SendResultCRC                            0x0000048f   Thumb Code    36  bootloader.o(i.SendResultCRC)
+    i.UART_PutChar                           0x000004b4   Section        0  rs232.o(i.UART_PutChar)
+    i.__main                                 0x000004c4   Section        0  bootloader.o(i.__main)
+    .constdata                               0x000007d8   Section       32  bootloader.o(.constdata)
+    .codeRam                                 0x1fffff00   Section      128  flash_kinetis.o(.codeRam)
+    .data                                    0x20000000   Section       20  bootloader.o(.data)
+    .data                                    0x20000014   Section        4  bootloader.o(.data)
+    .data                                    0x20000018   Section        4  bootloader.o(.data)
+    .data                                    0x2000001c   Section        2  crc.o(.data)
+    .bss                                     0x20000020   Section      256  bootloader.o(.bss)
+    .bss                                     0x20000120   Section       12  flash_kinetis.o(.bss)
+    BOOT_STACK                               0x200001e0   Section        4  linker_symbols.o(BOOT_STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __vector_table                           0x00000000   Data          64  bootloader.o(.IntVectTable)
+    JumpToUserApplication                    0x00000041   Thumb Code     0  bootloader_asm.o(.text)
+    CRC_AddByte                              0x0000004d   Thumb Code    38  crc.o(i.CRC_AddByte)
+    CRC_AddLong                              0x0000007d   Thumb Code    34  crc.o(i.CRC_AddLong)
+    FLASH_FlashCommandSequenceStart          0x000000a1   Thumb Code    60  flash_kinetisramfunc.o(i.FLASH_FlashCommandSequenceStart)
+    FLASH_Initialization                     0x000000e5   Thumb Code    22  flash_kinetis.o(i.FLASH_Initialization)
+    FLASH_ProgramLongWord                    0x00000105   Thumb Code    16  flash_kinetis.o(i.FLASH_ProgramLongWord)
+    FLASH_ProgramSectionByPhrases            0x0000011d   Thumb Code   108  flash_kinetis.o(i.FLASH_ProgramSectionByPhrases)
+    UART_GetChar                             0x000001c5   Thumb Code    12  rs232.o(i.UART_GetChar)
+    UART_Initialization                      0x000001d5   Thumb Code    30  rs232.o(i.UART_Initialization)
+    Config                                   0x00000400   Data          16  bootloader.o(.FlashConfig)
+    Boot_ResetMCU                            0x00000411   Thumb Code     8  bootloader.o(i.Boot_ResetMCU)
+    FLASH_EraseSector                        0x00000421   Thumb Code    14  flash_kinetis.o(i.FLASH_EraseSector)
+    FLASH_ProgramPhrase                      0x00000439   Thumb Code    22  flash_kinetis.o(i.FLASH_ProgramPhrase)
+    FLASH_ProgramSectionByLongs              0x00000459   Thumb Code    36  flash_kinetis.o(i.FLASH_ProgramSectionByLongs)
+    UART_PutChar                             0x000004b5   Thumb Code    12  rs232.o(i.UART_PutChar)
+    __main                                   0x000004c5   Thumb Code   726  bootloader.o(i.__main)
+    bootloaderIdent                          0x000007d8   Data          32  bootloader.o(.constdata)
+    buffer                                   0x1fffff00   Data         128  flash_kinetis.o(.codeRam)
+    address                                  0x20000000   Data           4  bootloader.o(.data)
+    length                                   0x20000004   Data           4  bootloader.o(.data)
+    crc_res                                  0x20000008   Data           4  bootloader.o(.data)
+    enableBootMode                           0x2000000c   Data           4  bootloader.o(.data)
+    timeout_cnt                              0x20000010   Data           4  bootloader.o(.data)
+    tmp_transpone                            0x20000014   Data           4  bootloader.o(.data)
+    i                                        0x20000018   Data           4  bootloader.o(.data)
+    crc                                      0x2000001c   Data           2  crc.o(.data)
+    write_buffer                             0x20000020   Data         256  bootloader.o(.bss)
+    CommandObj                               0x20000120   Data          12  flash_kinetis.o(.bss)
+    __BOOT_STACK_ADDRESS                     0x200001e0   Data           0  linker_symbols.o(BOOT_STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image entry point : Not specified.
+
+  Load Region LR_VECTORS (Base: 0x00000000, Size: 0x00000040, Max: 0x00000040, ABSOLUTE)
+
+    Execution Region VECTORS (Base: 0x00000000, Size: 0x00000040, Max: 0x00000040, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000040   Data   RO            8    .IntVectTable       bootloader.o
+
+
+
+  Load Region LR_1 (Base: 0x00000040, Size: 0x000001b8, Max: 0x000003c0, ABSOLUTE)
+
+    Execution Region ROM_1 (Base: 0x00000040, Size: 0x000001b8, Max: 0x000003c0, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000040   0x0000000a   Code   RO           85    .text               bootloader_asm.o
+    0x0000004a   0x00000002   PAD
+    0x0000004c   0x00000030   Code   RO           89    i.CRC_AddByte       crc.o
+    0x0000007c   0x00000022   Code   RO           90    i.CRC_AddLong       crc.o
+    0x0000009e   0x00000002   PAD
+    0x000000a0   0x00000044   Code   RO          179    i.FLASH_FlashCommandSequenceStart  flash_kinetisramfunc.o
+    0x000000e4   0x00000020   Code   RO          135    i.FLASH_Initialization  flash_kinetis.o
+    0x00000104   0x00000018   Code   RO          136    i.FLASH_ProgramLongWord  flash_kinetis.o
+    0x0000011c   0x0000006c   Code   RO          139    i.FLASH_ProgramSectionByPhrases  flash_kinetis.o
+    0x00000188   0x00000024   Code   RO            2    i.ReadAddress       bootloader.o
+    0x000001ac   0x00000018   Code   RO            3    i.ReadCrc           bootloader.o
+    0x000001c4   0x00000010   Code   RO          110    i.UART_GetChar      rs232.o
+    0x000001d4   0x00000024   Code   RO          111    i.UART_Initialization  rs232.o
+
+
+
+  Load Region LR_CFMPROT (Base: 0x00000400, Size: 0x00000010, Max: 0x00000010, ABSOLUTE)
+
+    Execution Region CFMPROT (Base: 0x00000400, Size: 0x00000010, Max: 0x00000010, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000400   0x00000010   Data   RO            7    .FlashConfig        bootloader.o
+
+
+
+  Load Region LR_2 (Base: 0x00000410, Size: 0x000003e8, Max: 0x000005f0, ABSOLUTE)
+
+    Execution Region ROM_2 (Base: 0x00000410, Size: 0x000003e8, Max: 0x000005f0, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000410   0x00000010   Code   RO            1    i.Boot_ResetMCU     bootloader.o
+    0x00000420   0x00000018   Code   RO          134    i.FLASH_EraseSector  flash_kinetis.o
+    0x00000438   0x00000020   Code   RO          137    i.FLASH_ProgramPhrase  flash_kinetis.o
+    0x00000458   0x00000024   Code   RO          138    i.FLASH_ProgramSectionByLongs  flash_kinetis.o
+    0x0000047c   0x00000012   Code   RO            4    i.SendResult        bootloader.o
+    0x0000048e   0x00000024   Code   RO            5    i.SendResultCRC     bootloader.o
+    0x000004b2   0x00000002   PAD
+    0x000004b4   0x00000010   Code   RO          112    i.UART_PutChar      rs232.o
+    0x000004c4   0x00000314   Code   RO            6    i.__main            bootloader.o
+    0x000007d8   0x00000020   Data   RO           10    .constdata          bootloader.o
+
+
+
+  Load Region LR_RAM (Base: 0x1fffff00, Size: 0x000000a4, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region DATACODE (Base: 0x1fffff00, Size: 0x00000080, Max: 0x00000100, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1fffff00   0x00000080   Data   RW          141    .codeRam            flash_kinetis.o
+
+
+    Execution Region DATA (Base: 0x20000000, Size: 0x0000012c, Max: 0x00000200, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00000014   Data   RW           11    .data               bootloader.o
+    0x20000014   0x00000004   Data   RW           12    .data               bootloader.o
+    0x20000018   0x00000004   Data   RW           13    .data               bootloader.o
+    0x2000001c   0x00000002   Data   RW           91    .data               crc.o
+    0x2000001e   0x00000002   PAD
+    0x20000020   0x00000100   Zero   RW            9    .bss                bootloader.o
+    0x20000120   0x0000000c   Zero   RW          140    .bss                flash_kinetis.o
+
+
+    Execution Region BOOT_STACK_ADDR (Base: 0x200001e0, Size: 0x00000004, Max: 0xffffffff, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x200001e0   0x00000004   Data   RW           84    BOOT_STACK          linker_symbols.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       918         82        112         28        256      13141   bootloader.o
+        10          0          0          0          0        280   bootloader_asm.o
+        82         10          0          2          0       1070   crc.o
+       256         38          0        128         12       3933   flash_kinetis.o
+        68          8          0          0          0       1007   flash_kinetisramfunc.o
+         0          0          0          4          0          0   linker_symbols.o
+        68         14          0          0          0       1660   rs232.o
+
+    ----------------------------------------------------------------------
+      1408        152        112        164        268      21091   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         6          0          0          2          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      1408        152        112        164        268      20519   Grand Totals
+      1408        152        112        164        268      20519   ELF Image Totals
+      1408        152        112        164          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 1520 (   1.48kB)
+    Total RW  Size (RW Data + ZI Data)               432 (   0.42kB)
+    Total ROM Size (Code + RO Data + RW Data)       1684 (   1.64kB)
+
+==============================================================================
+

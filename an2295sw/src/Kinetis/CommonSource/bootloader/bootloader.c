@@ -93,7 +93,7 @@ extern unsigned long __BOOT_STACK_ADDRESS[];
 	__declspec(cfmconfig) FlashConfig_t Config  =  
 #endif
 {
- 0xFFFFFFFF, 0xFFFFFFFF, FLASH_BOOT_PROTECTION, 0xFFFFFFFE,
+ 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFE,
 };
 
 
@@ -261,100 +261,7 @@ static void ReadAddress(void)
 #endif
 
 
-#if 0
-//-----------------------------------------------------------------------------
-// FUNCTION:    TrimmSettings
-// SCOPE:       Trimming of Internal Oscilator 
-// DESCRIPTION: This function measures break impulse from PC and sets correct trim value
 
-//              
-// PARAMETERS:  none
-//              
-// RETURNS:     none
-//----------------------------------------------------------------------------- 
-void SlaveFrequencyCalibration(void)
-{
-  signed long diff;
-#if IS_KMx_FAMILY
-  unsigned long lastDiff;
-    signed long update;
-  lastDiff = 0;
-#endif
-  BOOT_PIN_INIT_AS_GPIO; 
-  //  systick initialization
-  SYST_RVR = 0xFFFFFF; // full range 0.8s for standard bus clock  = 32768Hz * 640 FLL / 2^24
-  
-  while(((GPIO_PDIR_REG(BOOT_CALIBRATION_GPIO_BASE) & GPIO_RX_MASK)))
-  {};
-  
-  while(1)
-  {
-    //  waiting for falling edge of calibration impuls
-    diff = 10000000;
-    while(((GPIO_PDIR_REG(BOOT_CALIBRATION_GPIO_BASE) & GPIO_RX_MASK) == GPIO_RX_MASK))    
-    {
-      if(!diff--)
-        Boot_ResetMCU(); // OutOfLimit
-    };
-    
-    // Clear the Count Flag 
-    (void)SYST_CSR;
-    SYST_CVR = 0;
-    
-    //  waiting for raising edge of calibration impuls, if timer overflow is performed the baudrated is not relevant 
-    while((GPIO_PDIR_REG(BOOT_CALIBRATION_GPIO_BASE) & GPIO_RX_MASK) == 0)
-    {
-      if(SYST_CSR & SysTick_CSR_COUNTFLAG_MASK)
-        Boot_ResetMCU(); // OutOfLimit
-    }
-    timeout_cnt = SYST_CVR;
-    
-   
-     
-
-#if IS_KMx_FAMILY    
-    // 20 plus 
-    diff = 0xFFFFFF - timeout_cnt - CALIB_PULSE_LENGTH + 20;
-    
-    if(diff >= 0)
-      update = 2;
-    else
-    {
-      update = -2;
-      diff *= -1;
-    }
-    
-    MCG_C4 += update;
-    
-    if(lastDiff > diff || !diff)
-      break;
-    
-    lastDiff = diff;
-      
-      
-    
-#else 
-     // compute difference to expected value
-    diff = 0xFFFFFF - timeout_cnt - CALIB_PULSE_LENGTH;
-    
-    //  if calculate value is in this range frequency of internal oscilator is correct set  
-    if((diff <= BAUDRATE_ONE_PERCENT_ERROR) && (diff >= -BAUDRATE_ONE_PERCENT_ERROR))
-      break;    
-
-    // Why 6 ?
-    // We expect the the trimm could tune clocks +-25%. For example for short trim
-    // the right time of the calibration pulse is 1638 ticks. The 25% of this is 409.
-    // And for the worst case of deviation we want to add just 1/4 of of trim scale.
-    // what could be done by constatnt 6 (409 / 6 = 68 what is roughly 64 (256/4)).
-    
-    // And why 4? - Just for optimization :-)
-    TRIM_REG += diff >> 2; //6
-#endif
-  }
-  
-  BOOT_PIN_INIT_AS_UART;
-}
-#endif
 //-----------------------------------------------------------------------------
 // FUNCTION:    Bootloader
 // SCOPE:       Bootloader application system function 
@@ -378,41 +285,6 @@ int __main(void)
   #else
     WDG_Disable();    
   #endif
-  
-#ifdef KINETIS_L
-  SIM_CLKDIV1 = (uint32_t)0x00020000UL; 
-  MCG_C1 |= (MCG_C1_IREFS_MASK | MCG_C1_IRCLKEN_MASK);
-  MCG_C2 = 0;
-  MCG_C4 &= ~MCG_C4_DRST_DRS_MASK;
-  MCG_C4 |= (MCG_C4_DMX32_MASK|MCG_C4_DRST_DRS(1));
-  SIM_CLKDIV1 = (SIM_CLKDIV1_OUTDIV1(0) | SIM_CLKDIV1_OUTDIV4(1));
-  
-  OSC0_CR = (uint8_t)0x80U;
-  MCG_C5 = (uint8_t)0x00U;
-  MCG_C6 = (uint8_t)0x00U;
-  while((MCG_S & MCG_S_IREFST_MASK) == 0x00U) {};
-  while((MCG_S & 0x0CU) != 0x00U) {};	 
-#endif
-  
-#ifdef KINETIS_K
-   SIM_CLKDIV1 = (uint32_t)0xFFFFFFFFu; 
-   MCG_C1 = (uint8_t)0x06u;
-   MCG_C2 = (uint8_t)0x00u;
-   MCG_C4 &= ~((1<<6)|(1<<7)|(1<<5)); 
-   MCG_C4|= (0<<6)|(1<<7)|(1<<5);  
-   SIM_CLKDIV1 =(SIM_CLKDIV1_OUTDIV1(0)|SIM_CLKDIV1_OUTDIV2(0)|SIM_CLKDIV1_OUTDIV3(0)|SIM_CLKDIV1_OUTDIV4(1));
-   MCG_C5 = (uint8_t)0x00u;
-   MCG_C6 = (uint8_t)0x00u;
-   while((MCG_S & MCG_S_IREFST_MASK) == 0u);  //?足2谷 FLL2???那㊣?車那??迆2?2???那㊣?車
-   while((MCG_S & 0x0Cu) != 0x00u);           //米豕∩yFLL㊣?????
-#endif  
-
-#ifdef KINETIS_E
-  /* If not trimmed, do trim first */
-   ICS_C3 =  0x54;
-   ICS_C4 = 1;
-   while(!(ICS_S & ICS_S_LOCK_MASK));
-#endif
   
   // this setup all clock
   INIT_CLOCKS_TO_MODULES
@@ -462,12 +334,13 @@ int __main(void)
     
 #if BOOTLOADER_CRC_ENABLE == 1
       CRC_Init();    
-    #endif
+#endif
     
       //  multiplexer setting  to UART alternative
 #ifndef KINETIS_E
     BOOT_PIN_INIT_AS_UART;
 #endif
+    
     // init UART module
     UART_Initialization(); 
     
@@ -507,15 +380,7 @@ int __main(void)
 	if(getch != BOOT_CMD_ACK)
         {
              Boot_ResetMCU();
-        }
-	
-        //  measuring of brake signal due to using of Internal oscilator..
-        #if BOOTLOADER_AUTO_TRIMMING == 1           
-        if(getch != BOOT_CMD_ACK)
-        {
-             // SlaveFrequencyCalibration();
-        }
-        #endif        
+        }   
 
         // init the flash module
         FLASH_Initialization(); 

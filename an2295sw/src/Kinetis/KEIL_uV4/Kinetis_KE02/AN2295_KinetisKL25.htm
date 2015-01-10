@@ -1,0 +1,148 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\Kinetis_KE02\AN2295_KinetisKL25.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\Kinetis_KE02\AN2295_KinetisKL25.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Sat Nov 30 23:14:10 2013
+<BR><P>
+<H3>Maximum Stack Usage =         68 bytes + Unknown(Functions without stacksize, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+__main &rArr; FLASH_ProgramSectionByLongs &rArr; FLASH_ProgramLongWord &rArr; FLASH_FlashCommandSequenceStart
+<P>
+<H3>
+Functions with no stack information
+</H3><UL>
+ <LI><a href="#[10]">JumpToUserApplication</a>
+</UL>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[1]">Boot_ResetMCU</a> from bootloader.o(i.Boot_ResetMCU) referenced 14 times from bootloader.o(.IntVectTable)
+ <LI><a href="#[2]">FLASH_FlashCommandSequenceStart</a> from flash_kinetisramfunc.o(i.FLASH_FlashCommandSequenceStart) referenced from flash_kinetis.o(i.FLASH_Initialization)
+ <LI><a href="#[0]">__main</a> from bootloader.o(i.__main) referenced from bootloader.o(.IntVectTable)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[1]"></a>Boot_ResetMCU</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, bootloader.o(i.Boot_ResetMCU))
+<BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> bootloader.o(.IntVectTable)
+</UL>
+<P><STRONG><a name="[3]"></a>FLASH_EraseSector</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, flash_kinetis.o(i.FLASH_EraseSector))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = FLASH_EraseSector &rArr; FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[f]"></a>FLASH_Initialization</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, flash_kinetis.o(i.FLASH_Initialization))
+<BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[4]"></a>FLASH_ProgramLongWord</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, flash_kinetis.o(i.FLASH_ProgramLongWord))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = FLASH_ProgramLongWord &rArr; FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Calls]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Called By]<UL><LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramSectionByLongs
+</UL>
+
+<P><STRONG><a name="[5]"></a>FLASH_ProgramSectionByLongs</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, flash_kinetis.o(i.FLASH_ProgramSectionByLongs))
+<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = FLASH_ProgramSectionByLongs &rArr; FLASH_ProgramLongWord &rArr; FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Calls]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramLongWord
+</UL>
+<BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[6]"></a>FLASH_ProgramSectionByPhrases</STRONG> (Thumb, 108 bytes, Stack size 32 bytes, flash_kinetis.o(i.FLASH_ProgramSectionByPhrases), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramPhrase
+</UL>
+
+<P><STRONG><a name="[d]"></a>UART_PutChar</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, rs232.o(i.UART_PutChar))
+<BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendResult
+</UL>
+
+<P><STRONG><a name="[10]"></a>JumpToUserApplication</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, bootloader_asm.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[9]"></a>CRC_AddByte</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, crc.o(i.CRC_AddByte), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_AddLong
+</UL>
+
+<P><STRONG><a name="[8]"></a>CRC_AddLong</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, crc.o(i.CRC_AddLong), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CRC_AddByte
+</UL>
+
+<P><STRONG><a name="[2]"></a>FLASH_FlashCommandSequenceStart</STRONG> (Thumb, 114 bytes, Stack size 20 bytes, flash_kinetisramfunc.o(i.FLASH_FlashCommandSequenceStart))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Called By]<UL><LI><a href="#[4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramLongWord
+<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_EraseSector
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> flash_kinetis.o(i.FLASH_Initialization)
+</UL>
+<P><STRONG><a name="[7]"></a>FLASH_ProgramPhrase</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, flash_kinetis.o(i.FLASH_ProgramPhrase), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramSectionByPhrases
+</UL>
+
+<P><STRONG><a name="[b]"></a>UART_GetChar</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, rs232.o(i.UART_GetChar))
+<BR><BR>[Called By]<UL><LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Initialization
+<LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+<LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadAddress
+</UL>
+
+<P><STRONG><a name="[e]"></a>UART_Initialization</STRONG> (Thumb, 30 bytes, Stack size 4 bytes, rs232.o(i.UART_Initialization))
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART_Initialization
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_GetChar
+</UL>
+<BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[0]"></a>__main</STRONG> (Thumb, 450 bytes, Stack size 24 bytes, bootloader.o(i.__main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 68 + Unknown Stack Size
+<LI>Call Chain = __main &rArr; FLASH_ProgramSectionByLongs &rArr; FLASH_ProgramLongWord &rArr; FLASH_FlashCommandSequenceStart
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_PutChar
+<LI><a href="#[e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Initialization
+<LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_GetChar
+<LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JumpToUserApplication
+<LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramSectionByLongs
+<LI><a href="#[f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_Initialization
+<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_EraseSector
+<LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Boot_ResetMCU
+<LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SendResult
+<LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadAddress
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> bootloader.o(.IntVectTable)
+</UL><P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[a]"></a>ReadAddress</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, bootloader.o(i.ReadAddress))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ReadAddress
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_GetChar
+</UL>
+<BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+
+<P><STRONG><a name="[c]"></a>SendResult</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, bootloader.o(i.SendResult))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SendResult
+</UL>
+<BR>[Calls]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_PutChar
+</UL>
+<BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>

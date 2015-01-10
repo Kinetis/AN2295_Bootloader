@@ -105,12 +105,6 @@
   #warning There is missing define of flash start of relocated vectors. It sets to default '2048'!
 #endif
 
-#ifndef BOOTLOADER_AUTO_TRIMMING
-  #define BOOTLOADER_AUTO_TRIMMING 1
-  #warning There are missing define of auto trimming. It sets to default 1
-#elif BOOTLOADER_AUTO_TRIMMING == 0 
-  #warning Set the correct trimm value of internal oscillator !     
-#endif 
 
 #if FLASH_BLOCK_CNT == 2
   #if !defined(USER_FLASH_START_2) || !defined(USER_FLASH_END_2)

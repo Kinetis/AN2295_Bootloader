@@ -27,6 +27,8 @@ extern FCC0B_STR CommandObj;
 
 Byte readreg = 0;
 
+#if defined(KINETIS_KE02)
+
 LWord FLASH_FlashCommandSequenceStart(Byte index)
 {
 	Byte* ptrCommandObj = (Byte*)&CommandObj;
@@ -112,6 +114,97 @@ LWord FLASH_FlashCommandSequenceStart(Byte index)
     return (FTMRH_FSTAT & (FTMRH_FSTAT_ACCERR_MASK | FTMRH_FSTAT_FPVIOL_MASK)); 
 
 }
+
+#endif
+
+#if defined(KINETIS_KE06)
+
+LWord FLASH_FlashCommandSequenceStart(Byte index)
+{
+	Byte* ptrCommandObj = (Byte*)&CommandObj;
+
+#if     defined(FLASH_ENABLE_STALLING_FLASH_CONTROLLER)
+     MCM_PLACR |= MCM_PLACR_ESFC_MASK;          /* enable stalling flash controller when flash is busy */
+#endif
+
+	/* wait till CCIF bit is set */
+  	while(!(FTMRE_FSTAT & FTMRE_FSTAT_CCIF_MASK)){};
+  	/* clear RDCOLERR & ACCERR & FPVIOL flag in flash status register */
+  	FTMRE_FSTAT = FTMRE_FSTAT_ACCERR_MASK | FTMRE_FSTAT_FPVIOL_MASK; 
+
+	if(index == ERASE_BLOCK_INDEX)
+	{
+		// Write index to specify the command code to be loaded
+		FTMRE->FCCOBIX = 0x0;
+		// Write command code and memory address bits[23:16]	
+		FTMRE->FCCOBHI = FLASH_CMD_ERASE_SECTOR;// EEPROM FLASH command
+		FTMRE->FCCOBLO = CommandObj.regs.fccob1;// memory address bits[23:16]
+		// Write index to specify the lower byte memory address bits[15:0] to be loaded
+		FTMRE->FCCOBIX = 0x1;
+		// Write the lower byte memory address bits[15:0]
+		FTMRE->FCCOBLO = CommandObj.regs.fccob3;
+		FTMRE->FCCOBHI = CommandObj.regs.fccob2;
+
+	}
+	else if(index == PROGRAM_LONGWORD_INDEX)
+	{
+		// Write index to specify the command code to be loaded
+		FTMRE->FCCOBIX = 0x0;
+		// Write command code and memory address bits[23:16]	
+		FTMRE->FCCOBHI = FLASH_CMD_PROGRAM;// program FLASH command
+		FTMRE->FCCOBLO = CommandObj.regs.fccob1;// memory address bits[23:16]
+		// Write index to specify the lower byte memory address bits[15:0] to be loaded
+		FTMRE->FCCOBIX = 0x1;
+		// Write the lower byte memory address bits[15:0]
+		FTMRE->FCCOBLO = CommandObj.regs.fccob3;
+		FTMRE->FCCOBHI = CommandObj.regs.fccob2;
+		// Write index to specify the word0 (MSB word) to be programmed
+		FTMRE->FCCOBIX = 0x2;
+     
+		FTMRE->FCCOBHI = CommandObj.regs.fccob6;	
+		FTMRE->FCCOBLO = CommandObj.regs.fccob7;	
+      
+		// Write index to specify the word1 (LSB word) to be programmed
+		FTMRE->FCCOBIX = 0x3;
+		// Write the word1 
+
+		FTMRE->FCCOBHI = CommandObj.regs.fccob4;
+		FTMRE->FCCOBLO = CommandObj.regs.fccob5;
+	}
+	
+
+    //FTMRH->FSTAT |= FTMRH_FSTAT_CCIF_MASK;    
+        FTMRE_FSTAT = 0x80; 
+    
+    if(index != 0)
+    {
+      // Wait till command is completed
+      //while (!(FTMRH->FSTAT & FTMRH_FSTAT_CCIF_MASK));   
+#if 0
+      while(1)
+      {
+        Byte i = 0;
+        readreg = FTMRH->FSTAT;
+        if(readreg & FTMRH_FSTAT_CCIF_MASK)
+        {
+            break;
+        }
+        
+        for(i = 0; i< 200 ;i++)
+        {
+            ;
+        }
+      }
+#endif
+    }
+
+
+    return (FTMRE_FSTAT & (FTMRE_FSTAT_ACCERR_MASK | FTMRE_FSTAT_FPVIOL_MASK)); 
+
+}
+
+#endif
+
 
 
 #else

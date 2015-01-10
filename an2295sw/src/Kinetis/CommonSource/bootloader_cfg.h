@@ -43,9 +43,9 @@
   #elif defined(KINETIS_KL26)
     #include "AN2295_FRDM_KL26Z_cfg.h"
   #endif
-//  #include "AN2295_TWR_KL25_cfg.h"
+
 #elif defined(KINETIS_M)
-  //#include "AN2295_VAL_KM34_cfg.h"
+
   #include "AN2295_TWR_KM34_cfg.h"
 
 #elif defined(KINETIS_E)
@@ -53,13 +53,20 @@
     #include "AN2295_FRDM_KE02Z_cfg.h"
   #endif
 
-#else
-  //#include "AN2295_TWR_K20D50_cfg.h"
-  //#include "AN2295_TWR_K20D72_cfg.h"
-  #include "AN2295_TWR_K60_cfg.h"
-  //#include "AN2295_TWR_K60D100_cfg.h"
-  //#include "AN2295_TWR_K70120_cfg.h"
-  //#include "AN2295_TWR_K20_1M_cfg.h"
+  #if defined(KINETIS_KE06)
+    #include "AN2295_FRDM_KE06Z_cfg.h"
+  #endif
+
+#elif defined(KINETIS_V)
+  #if defined(KINETIS_KV46)
+    #include "AN2295_TWR_KV4x_cfg.h"
+  #endif
+
+#elif defined(KINETIS_K)
+  #if defined(KINETIS_K60)
+    #include "AN2295_TWR_K60_cfg.h"
+  #endif
+
 #endif
 
 #endif //BOOTLOADER_CFG_H
