@@ -38,6 +38,8 @@
 #if defined(KINETIS_L)
   #if defined(KINETIS_KL25)
     #include "AN2295_FRDM_KL25Z_cfg.h"
+  #elif defined(KINETIS_KL43)
+    #include "AN2295_FRDM_KL43Z_cfg.h"
   #elif defined(KINETIS_KL46)
     #include "AN2295_FRDM_KL46Z_cfg.h"
   #elif defined(KINETIS_KL26)

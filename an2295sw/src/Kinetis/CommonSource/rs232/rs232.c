@@ -24,7 +24,8 @@ void UART_Initialization(void)
 {
   UART_BDH_REG(BOOT_UART_BASE)     = ((UART_SBR>>8)&0x1f);
   UART_BDL_REG(BOOT_UART_BASE)     = (UART_SBR&0xff);
-#if IS_Kxx_FAMILY  
+  
+#if (defined(KINETIS_K) || defined(KINETIS_V))
   UART_C4_REG(BOOT_UART_BASE)      = (UART_BRFA&0x1f);  
 #endif
   UART_C2_REG(BOOT_UART_BASE)      = UART_C2_TE_MASK|UART_C2_RE_MASK;
@@ -47,6 +48,7 @@ void UART_PutChar(unsigned char data)
 ******************************************************************/
 unsigned char UART_GetChar(void)
 {
+  unsigned char ret = 0;
   while(UART_IsChar() == 0){
 
 #if BOOTLOADER_INT_WATCHDOG == 1
@@ -54,6 +56,6 @@ unsigned char UART_GetChar(void)
 #endif
 		
 };
-  
-  return UART_D_REG(BOOT_UART_BASE);
+  ret = UART_D_REG(BOOT_UART_BASE);
+  return ret;
 }

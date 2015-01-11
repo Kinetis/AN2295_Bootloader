@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<exampleInfo>
+  <copyDir>..\config_files</copyDir>
+  <copyDir>..\..\..\src\common</copyDir>
+  <copyDir>..\..\..\src\cpu</copyDir>
+  <copyDir>..\..\..\src\drivers</copyDir>
+  <copyDir>..\..\..\src\platforms</copyDir>
+  <copyDir>..\..\..\src\projects\adc_demo</copyDir>
+</exampleInfo>
+

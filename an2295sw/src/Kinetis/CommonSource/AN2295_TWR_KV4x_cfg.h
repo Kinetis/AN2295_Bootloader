@@ -20,7 +20,7 @@
 #define KINETIS_MODEL KV46_150MHz
 
 
-#define FLASH_PROT_SECTION (KINETIS_FLASH /32)
+#define FLASH_PROT_SECTION 0x4000
 
 // Bus clock frequency
 #define BOOT_BUS_CLOCK        (32768*640)              //(48000000)      //
@@ -42,7 +42,7 @@
 
 /* Actual used UART module */
 /* A range of UART baudrates is (9600 - 115200) */
-#define BOOT_UART_BAUD_RATE  115200 
+#define BOOT_UART_BAUD_RATE  9600 
 
 /** GPIO & UART pins initialization */
 
@@ -85,7 +85,7 @@
 #define BOOT_CALIBRATION_GPIO_BASE  PTC_BASE_PTR
 
 /* Description string */
-#define KINETIS_MODEL_STR "K60"
+#define KINETIS_MODEL_STR "KV4"
 
   #define SRS_REG               RCM_SRS0
   #define SRS_POR_MASK          RCM_SRS0_POR_MASK

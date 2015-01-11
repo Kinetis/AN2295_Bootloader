@@ -456,6 +456,7 @@ int __main(void)
           #if BOOTLOADER_CRC_ENABLE == 1
             #ifndef KINETIS_E
               CRC_AddByte(SIM_SDID >> 8);
+              //CRC_AddByte(0xC1);
             #else
               CRC_AddByte(0x24);
             #endif          
@@ -463,6 +464,7 @@ int __main(void)
               
           #ifndef KINETIS_E
             UART_PutChar(SIM_SDID >> 8); // high
+            //UART_PutChar(0xC1); // high
           #else
             UART_PutChar(0x24);
           #endif              
@@ -470,6 +472,7 @@ int __main(void)
           #if BOOTLOADER_CRC_ENABLE == 1           
             #ifndef KINETIS_E
               CRC_AddByte(SIM_SDID);
+              //CRC_AddByte(0x4A);
             #else
               CRC_AddByte(0x86);
             #endif    
@@ -477,6 +480,7 @@ int __main(void)
               
           #ifndef KINETIS_E
             UART_PutChar(SIM_SDID);  // low
+              //UART_PutChar(0x4A);  // low
           #else
             UART_PutChar(0x86);
           #endif                

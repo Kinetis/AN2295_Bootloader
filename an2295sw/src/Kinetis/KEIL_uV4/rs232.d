@@ -1,9 +1,0 @@
-.\rs232.o: ..\CommonSource\rs232\rs232.c
-.\rs232.o: ..\CommonSource\bootloader\kinetis_params.h
-.\rs232.o: ..\CommonSource\bootloader_cfg.h
-.\rs232.o: ..\CommonSource\AN2295_FRDM_KL25Z_cfg.h
-.\rs232.o: ..\CommonSource\main.h
-.\rs232.o: ..\CommonSource\headers\MKL25Z128LK4.h
-.\rs232.o: C:\Keil_ARM4\ARM\ARMCC\bin\..\include\stdint.h
-.\rs232.o: ..\CommonSource\wdg\wdg.h
-.\rs232.o: ..\CommonSource\rs232\rs232.h
