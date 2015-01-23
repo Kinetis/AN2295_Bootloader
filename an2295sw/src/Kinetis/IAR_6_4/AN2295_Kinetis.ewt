@@ -701,6 +701,9 @@
       <name>$PROJ_DIR$\..\CommonSource\AN2295_TWR_KL25_cfg.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\CommonSource\AN2295_TWR_KV10_cfg.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\CommonSource\AN2295_TWR_KV4x_cfg.h</name>
     </file>
     <file>

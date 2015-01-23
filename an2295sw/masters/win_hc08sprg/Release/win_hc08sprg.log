@@ -1,0 +1,14 @@
+﻿生成启动时间为 1/11/2015 11:27:52 AM。
+     1>项目“D:\Bootloader\AN2295\an2295sw\masters\win_hc08sprg\win_hc08sprg.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppClean.targets(74,5): warning : 对路径“D:\Bootloader\AN2295\an2295sw\masters\Release\win_hc08sprg.exe”的访问被拒绝。
+     1>InitializeBuildStatus:
+         正在创建“Release\win_hc08sprg.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\common_sources /Zi /nologo /W3 /WX- /O2 /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _MBCS /Gm- /EHsc /MT /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\win_hc08sprg.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>d:\bootloader\an2295\an2295sw\masters\win_hc08sprg\stdafx.h(38): fatal error C1083: 无法打开包括文件:“afxwin.h”: No such file or directory
+     1>已完成生成项目“D:\Bootloader\AN2295\an2295sw\masters\win_hc08sprg\win_hc08sprg.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.45

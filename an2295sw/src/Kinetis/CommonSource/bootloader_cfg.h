@@ -62,6 +62,8 @@
 #elif defined(KINETIS_V)
   #if defined(KINETIS_KV46)
     #include "AN2295_TWR_KV4x_cfg.h"
+  #elif defined(KINETIS_KV10)
+    #include "AN2295_TWR_KV10_cfg.h"
   #endif
 
 #elif defined(KINETIS_K)
