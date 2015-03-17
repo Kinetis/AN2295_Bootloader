@@ -93,7 +93,7 @@ extern unsigned long __BOOT_STACK_ADDRESS[];
 	__declspec(cfmconfig) FlashConfig_t Config  =  
 #endif
 {
- 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFE,
+ 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFF3FFE,
 };
 
 
@@ -330,7 +330,7 @@ int __main(void)
   if(enableBootMode)
   {
 	  //unsigned long systick_cnt;
-	  unsigned char i;    
+	  unsigned int i;    
     
 #if BOOTLOADER_CRC_ENABLE == 1
       CRC_Init();    
@@ -340,10 +340,28 @@ int __main(void)
 #ifndef KINETIS_E
     BOOT_PIN_INIT_AS_UART;
 #endif
+ 
+     
     
     // init UART module
     UART_Initialization(); 
+    /*
+      while(1)
+      {
+        if(UART_IsChar())
+        {
+          unsigned char getch = 0;       
+          getch = UART_GetChar();
+          UART_PutChar(getch);
+        }        
+      }
+
     
+    for(i = 0; i< 256; i++ )
+    {
+        UART_PutChar(i);
+    }
+    */
     // run the timer on 10ms
     SYST_RVR = (unsigned long)(0.01 * BOOT_BUS_CLOCK); // to do add macro to define the initial timeout
     SYST_CSR = (SysTick_CSR_CLKSOURCE_MASK | SysTick_CSR_ENABLE_MASK);

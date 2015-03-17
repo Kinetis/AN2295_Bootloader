@@ -21,7 +21,7 @@
 
 #define FLASH_PROT_SECTION (0x1000)
 
-#define BOOT_BUS_CLOCK        (32768*640)
+#define BOOT_BUS_CLOCK     (8*1000*1000)                //ƒ¨»œ π”√ MCGIRCLK 8M
 
 /** Kinetis Flash memory size */
 
@@ -36,11 +36,13 @@
 
 /**************************************************/
 /* Actual used UART module */
-#define BOOT_UART_BASE LPUART_BASE_PTRS
+#define LPUART_USED
+
+#define BOOT_UART_BASE LPUART0_BASE_PTR
 
 /* Actual used UART module */
 /* A range of UART baudrates is (9600 - 115200) */
-#define BOOT_UART_BAUD_RATE  115200 
+#define BOOT_UART_BAUD_RATE  9600 
 
 /** GPIO & UART pins initialization */
 
@@ -76,7 +78,7 @@
 
 #define BOOTLOADER_AUTO_TRIMMING    1 
 
-#define BOOTLOADER_PIN_ENABLE       1
+#define BOOTLOADER_PIN_ENABLE       0
 /**************************************************/
 /** CALIBRATION OF BOOTLOADER TRIM SETTINGS */
 #define BOOT_CALIBRATION_GPIO_BASE  PTA_BASE_PTR
@@ -101,6 +103,7 @@
                                     
   #define INIT_CLOCKS_TO_MODULES    SIM_SCGC4 |= (SIM_SCGC4_UART0_MASK); \
                                     SIM_SCGC5 |= 0xffffffff; \
+                                    SIM_SOPT2 |= SIM_SOPT2_LPUART0SRC(3); \
                                     SIM_SCGC6 |= SIM_SCGC6_FTF_MASK;
 
 /******************************************************************************

@@ -9586,7 +9586,7 @@
         </option>
         <option>
           <name>MemFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\debugger\Freescale\MKL46Z256xxx4.ddf</state>
+          <state>$TOOLKIT_DIR$\CONFIG\debugger\Freescale\MKL43Z256xxx4.ddf</state>
         </option>
         <option>
           <name>RunToEnable</name>
@@ -9626,7 +9626,7 @@
         </option>
         <option>
           <name>OCDynDriverList</name>
-          <state>PEMICRO_ID</state>
+          <state>JLINK_ID</state>
         </option>
         <option>
           <name>OCLastSavedByProductVersion</name>
@@ -9658,7 +9658,7 @@
         </option>
         <option>
           <name>FlashLoadersV3</name>
-          <state>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashKLxx256K.board</state>
+          <state>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashKLxx256KROM.board</state>
         </option>
         <option>
           <name>OCImagesSuppressCheck1</name>
@@ -10949,7 +10949,7 @@
         </option>
         <option>
           <name>MemFile</name>
-          <state>$TOOLKIT_DIR$\CONFIG\debugger\Freescale\MKV46F256xxx15.ddf</state>
+          <state>$TOOLKIT_DIR$\CONFIG\debugger\Freescale\MKV10Z32xxx7.ddf</state>
         </option>
         <option>
           <name>RunToEnable</name>
@@ -11021,7 +11021,7 @@
         </option>
         <option>
           <name>FlashLoadersV3</name>
-          <state>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashKV4x32K.board</state>
+          <state>$TOOLKIT_DIR$\config\flashloader\Freescale\FlashKV1x32K.board</state>
         </option>
         <option>
           <name>OCImagesSuppressCheck1</name>

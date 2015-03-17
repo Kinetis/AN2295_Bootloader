@@ -16,6 +16,19 @@
 	#define _RS232_H
 
 	#include "kinetis_params.h"
+   
+#ifdef LPUART_USED
+
+	#define LPUART_SBR  (unsigned char)(BOOT_BUS_CLOCK / (16*BOOT_UART_BAUD_RATE))
+
+	//  API
+	void UART_Initialization(void);
+	#define UART_Deinitialization() LPUART_CTRL_REG(BOOT_UART_BASE) = 0
+	void UART_PutChar(unsigned char data);
+	unsigned char UART_GetChar(void);
+	#define UART_IsChar() (LPUART_STAT_REG(BOOT_UART_BASE) & LPUART_STAT_RDRF_MASK)   
+   
+#else
 
 	#define UART_SBR  (unsigned char)(BOOT_BUS_CLOCK / (16*BOOT_UART_BAUD_RATE))
 	#define UART_BRFA (unsigned char)((((BOOT_BUS_CLOCK/(16*BOOT_UART_BAUD_RATE))- \
@@ -27,4 +40,6 @@
 	void UART_PutChar(unsigned char data);
 	unsigned char UART_GetChar(void);
 	#define UART_IsChar() (UART_S1_REG(BOOT_UART_BASE) & UART_S1_RDRF_MASK)
+#endif
+        
 #endif

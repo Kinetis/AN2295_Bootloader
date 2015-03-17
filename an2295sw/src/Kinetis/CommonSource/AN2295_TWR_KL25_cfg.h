@@ -39,7 +39,7 @@
 
 /* Actual used UART module */
 /* A range of UART baudrates is (9600 - 115200) */
-#define BOOT_UART_BAUD_RATE  115200
+#define BOOT_UART_BAUD_RATE  9600
 
 /** GPIO & UART pins initialization */
 

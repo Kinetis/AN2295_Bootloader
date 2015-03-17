@@ -17,6 +17,53 @@
 #include "wdg.h"
 #include "rs232.h"
 
+#ifdef LPUART_USED
+ 
+/**************************************************************//*!
+* UART Initialization  
+******************************************************************/
+void UART_Initialization(void)
+{
+  LPUART_BAUD_REG(BOOT_UART_BASE) |= LPUART_BAUD_SBR(LPUART_SBR);
+  
+  LPUART_CTRL_REG(BOOT_UART_BASE) |= LPUART_CTRL_TE_MASK | LPUART_CTRL_RE_MASK;
+
+  while(UART_IsChar())
+    (void)UART_GetChar();
+}   
+
+/**************************************************************//*!
+* Function for sending one character   
+******************************************************************/
+void UART_PutChar(unsigned char data)
+{
+  while((LPUART_STAT_REG(BOOT_UART_BASE) & LPUART_STAT_TC_MASK) == 0){};
+  LPUART_DATA_REG(BOOT_UART_BASE) = data;
+}
+
+
+
+/**************************************************************//*!
+* Function for receiving of one character  
+******************************************************************/
+unsigned char UART_GetChar(void)
+{
+  unsigned char ret = 0;
+  while(UART_IsChar() == 0){
+
+#if BOOTLOADER_INT_WATCHDOG == 1
+    WDG_Refresh(); /* feeds the dog */
+#endif
+		
+};
+  ret = LPUART_DATA_REG(BOOT_UART_BASE);
+  return ret;
+}
+
+
+
+#else  
+   
 /**************************************************************//*!
 * UART Initialization  
 ******************************************************************/
@@ -32,7 +79,7 @@ void UART_Initialization(void)
 
   while(UART_IsChar())
     (void)UART_GetChar();
-}
+}   
 
 /**************************************************************//*!
 * Function for sending one character   
@@ -59,3 +106,5 @@ unsigned char UART_GetChar(void)
   ret = UART_D_REG(BOOT_UART_BASE);
   return ret;
 }
+
+#endif

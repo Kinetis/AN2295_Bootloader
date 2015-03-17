@@ -10,11 +10,14 @@ LimitSize=0
 ByteLimit=50
 [JLinkDriver]
 CStepIntDis=_ 0
+TraceBufferSize=0x00010000
+TraceStallIfFIFOFull=0x00000000
+TracePortSize=0x00000000
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
 [DebugChecksum]
-Checksum=-615592173
+Checksum=-299178005
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -23,8 +26,8 @@ MixedMode=1
 Placement=_ 578 289 1023 571
 [FlashMemory]
 FlashEraseSelection=0 1  
-[Breakpoints2]
-Count=0
+[CodeCoverage]
+Enabled=_ 0
 [struct_types]
 Fmt0=BootloaderIdentOptimType-blocksCnt	4	0
 Fmt1=BootloaderIdentOptimType-eraseBlockSize	4	0
@@ -34,6 +37,9 @@ Fmt4=FlashBlocksDescType-endAddr	4	0
 Fmt5=FlashBlocksDescType-startAddr	4	0
 [watch_formats]
 Fmt0={W}0:SCB_VTOR	4	0
+[Trace1]
+Enabled=0
+ShowSource=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -41,6 +47,16 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
+[Breakpoints2]
+Count=0
 [Disassemble mode]
 mode=0
 [Breakpoints]
