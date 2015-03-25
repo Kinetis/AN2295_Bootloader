@@ -17,7 +17,7 @@ TracePortSize=0x00000000
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
 [DebugChecksum]
-Checksum=-299178005
+Checksum=-72590863
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -28,6 +28,19 @@ Placement=_ 578 289 1023 571
 FlashEraseSelection=0 1  
 [CodeCoverage]
 Enabled=_ 0
+[Breakpoints]
+Bp0=_ "STD_CODE" "0x0000ECF8" 0 0 0 0 "" 0 "" 0
+Bp1=_ "STD_CODE" "0x0000EC98" 0 0 0 0 "" 0 "" 0
+Bp2=_ "STD_CODE" "0x0000D2F8" 0 0 0 0 "" 0 "" 0
+Bp3=_ "STD_CODE" "0x00004930" 0 0 0 0 "" 0 "" 0
+Bp4=_ "STD_CODE" "0x0000F660" 0 0 0 0 "" 0 "" 0
+Bp5=_ "STD_CODE" "0x000074D0" 0 0 0 0 "" 0 "" 0
+Bp6=_ "STD_CODE" "0x00007100" 0 0 0 0 "" 0 "" 0
+Bp7=_ "STD_CODE" "0x00008068" 0 0 0 0 "" 0 "" 0
+Bp8=_ "STD_CODE" "{D:\Bootloader\an2295sw\src\Kinetis\CommonSource\Bootloader\bootloader.c}.418.3" 0 0 0 0 "" 0 "" 0
+Bp9=_ "STD_CODE" "{D:\Bootloader\AN2295\an2295sw\src\Kinetis\CommonSource\bootloader\bootloader.c}.506.11" 1 0 0 0 "" 0 "" 0
+Bp10=_ "STD_CODE" "{D:\Bootloader\AN2295\an2295sw\src\Kinetis\CommonSource\bootloader\bootloader.c}.582.20" 1 0 0 0 "" 0 "" 0
+Count=11
 [struct_types]
 Fmt0=BootloaderIdentOptimType-blocksCnt	4	0
 Fmt1=BootloaderIdentOptimType-eraseBlockSize	4	0
@@ -55,23 +68,10 @@ Mode=1
 Graph=0
 Symbiont=0
 Exclusions=
-[Breakpoints2]
-Count=0
 [Disassemble mode]
 mode=0
-[Breakpoints]
-Bp0=_ "STD_CODE" "0x0000ECF8" 0 0 0 0 "" 0 "" 0
-Bp1=_ "STD_CODE" "0x0000EC98" 0 0 0 0 "" 0 "" 0
-Bp2=_ "STD_CODE" "0x0000D2F8" 0 0 0 0 "" 0 "" 0
-Bp3=_ "STD_CODE" "0x00004930" 0 0 0 0 "" 0 "" 0
-Bp4=_ "STD_CODE" "0x0000F660" 0 0 0 0 "" 0 "" 0
-Bp5=_ "STD_CODE" "0x000074D0" 0 0 0 0 "" 0 "" 0
-Bp6=_ "STD_CODE" "0x00007100" 0 0 0 0 "" 0 "" 0
-Bp7=_ "STD_CODE" "0x00008068" 0 0 0 0 "" 0 "" 0
-Bp8=_ "STD_CODE" "{D:\Bootloader\an2295sw\src\Kinetis\CommonSource\Bootloader\bootloader.c}.418.3" 0 0 0 0 "" 0 "" 0
-Bp9=_ "STD_CODE" "{D:\Bootloader\AN2295\an2295sw\src\Kinetis\CommonSource\bootloader\bootloader.c}.506.11" 1 0 0 0 "" 0 "" 0
-Bp10=_ "STD_CODE" "{D:\Bootloader\AN2295\an2295sw\src\Kinetis\CommonSource\bootloader\bootloader.c}.582.20" 1 0 0 0 "" 0 "" 0
-Count=11
+[Breakpoints2]
+Count=0
 [Aliases]
 Count=0
 SuppressDialog=0

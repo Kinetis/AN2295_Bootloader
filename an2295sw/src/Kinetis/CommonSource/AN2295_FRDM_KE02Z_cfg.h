@@ -21,7 +21,7 @@
 
 #define FLASH_PROT_SECTION (0x1000)
 
-#define BOOT_BUS_CLOCK     (31250*640)
+#define BOOT_BUS_CLOCK     (31250*512)
 
 /** Kinetis Flash memory size */
 
