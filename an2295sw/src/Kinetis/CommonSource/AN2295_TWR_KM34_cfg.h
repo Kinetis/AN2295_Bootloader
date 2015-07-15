@@ -75,7 +75,7 @@
 
 #define BOOTLOADER_AUTO_TRIMMING    1 
 
-#define BOOTLOADER_PIN_ENABLE       1
+#define BOOTLOADER_PIN_ENABLE       0
 /**************************************************/
 /** CALIBRATION OF BOOTLOADER TRIM SETTINGS */
 #define BOOT_CALIBRATION_GPIO_BASE  GPIOI_BASE_PTR
