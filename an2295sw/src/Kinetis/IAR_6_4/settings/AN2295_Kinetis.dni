@@ -2,54 +2,28 @@
 FillEnabled=0
 OverflowWarningsEnabled=1
 WarningThreshold=90
-SpWarningsEnabled=1
+SpWarningsEnabled=0
 WarnLogOnly=1
-UseTrigger=0
-TriggerName=main
+UseTrigger=1
+TriggerName=__main
 LimitSize=0
 ByteLimit=50
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
 [JLinkDriver]
 CStepIntDis=_ 0
 TraceBufferSize=0x00010000
 TraceStallIfFIFOFull=0x00000000
 TracePortSize=0x00000000
-[Exceptions]
-StopOnUncaught=_ 0
-StopOnThrow=_ 0
 [DebugChecksum]
-Checksum=-72590863
+Checksum=800751214
 [CallStack]
 ShowArgs=0
 [Disassembly]
 MixedMode=1
-[BreakpointUsageDialog]
-Placement=_ 578 289 1023 571
-[FlashMemory]
-FlashEraseSelection=0 1  
 [CodeCoverage]
 Enabled=_ 0
-[Breakpoints]
-Bp0=_ "STD_CODE" "0x0000ECF8" 0 0 0 0 "" 0 "" 0
-Bp1=_ "STD_CODE" "0x0000EC98" 0 0 0 0 "" 0 "" 0
-Bp2=_ "STD_CODE" "0x0000D2F8" 0 0 0 0 "" 0 "" 0
-Bp3=_ "STD_CODE" "0x00004930" 0 0 0 0 "" 0 "" 0
-Bp4=_ "STD_CODE" "0x0000F660" 0 0 0 0 "" 0 "" 0
-Bp5=_ "STD_CODE" "0x000074D0" 0 0 0 0 "" 0 "" 0
-Bp6=_ "STD_CODE" "0x00007100" 0 0 0 0 "" 0 "" 0
-Bp7=_ "STD_CODE" "0x00008068" 0 0 0 0 "" 0 "" 0
-Bp8=_ "STD_CODE" "{D:\Bootloader\an2295sw\src\Kinetis\CommonSource\Bootloader\bootloader.c}.418.3" 0 0 0 0 "" 0 "" 0
-Bp9=_ "STD_CODE" "{D:\Bootloader\AN2295\an2295sw\src\Kinetis\CommonSource\bootloader\bootloader.c}.506.11" 1 0 0 0 "" 0 "" 0
-Bp10=_ "STD_CODE" "{D:\Bootloader\AN2295\an2295sw\src\Kinetis\CommonSource\bootloader\bootloader.c}.582.20" 1 0 0 0 "" 0 "" 0
-Count=11
-[struct_types]
-Fmt0=BootloaderIdentOptimType-blocksCnt	4	0
-Fmt1=BootloaderIdentOptimType-eraseBlockSize	4	0
-Fmt2=BootloaderIdentOptimType-relocatedVectors	4	0
-Fmt3=BootloaderIdentOptimType-writeBlockSize	4	0
-Fmt4=FlashBlocksDescType-endAddr	4	0
-Fmt5=FlashBlocksDescType-startAddr	4	0
-[watch_formats]
-Fmt0={W}0:SCB_VTOR	4	0
 [Trace1]
 Enabled=0
 ShowSource=1
@@ -64,10 +38,12 @@ LogFile=_ ""
 Enabled=0
 [DriverProfiling]
 Enabled=0
-Mode=1
+Mode=0
 Graph=0
 Symbiont=0
 Exclusions=
+[Breakpoints]
+Count=0
 [Disassemble mode]
 mode=0
 [Breakpoints2]

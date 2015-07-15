@@ -93,7 +93,13 @@ extern unsigned long __BOOT_STACK_ADDRESS[];
 	__declspec(cfmconfig) FlashConfig_t Config  =  
 #endif
 {
- 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFF3FFE,
+  
+#ifdef KINETIS_M
+              0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFF33FE,
+#else
+              0xFFFFFFFF, 0xFFFFFFFF, 0xFFFFFFFF, 0xFFFF3FFE,
+#endif  
+
 };
 
 

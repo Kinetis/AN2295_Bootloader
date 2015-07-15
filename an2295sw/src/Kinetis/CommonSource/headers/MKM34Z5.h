@@ -2925,23 +2925,23 @@ typedef struct GPIO_MemMap {
 
 /* GPIO - Peripheral instance base addresses */
 /** Peripheral GPIOD base pointer */
-#define GPIOD_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF003u)
+#define PTD_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF003u)
 /** Peripheral GPIOC base pointer */
-#define GPIOC_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF002u)
+#define PTC_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF002u)
 /** Peripheral GPIOB base pointer */
-#define GPIOB_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF001u)
+#define PTB_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF001u)
 /** Peripheral GPIOA base pointer */
-#define GPIOA_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF000u)
+#define PTA_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF000u)
 /** Peripheral GPIOH base pointer */
-#define GPIOH_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF043u)
+#define PTH_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF043u)
 /** Peripheral GPIOG base pointer */
-#define GPIOG_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF042u)
+#define PTG_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF042u)
 /** Peripheral GPIOF base pointer */
-#define GPIOF_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF041u)
+#define PTF_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF041u)
 /** Peripheral GPIOE base pointer */
-#define GPIOE_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF040u)
+#define PTE_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF040u)
 /** Peripheral GPIOI base pointer */
-#define GPIOI_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF080u)
+#define PTI_BASE_PTR                           ((GPIO_MemMapPtr)0x400FF080u)
 /** Array initializer of GPIO peripheral base pointers */
 #define GPIO_BASE_PTRS                           { GPIOA_BASE_PTR, GPIOB_BASE_PTR, GPIOC_BASE_PTR, GPIOD_BASE_PTR, GPIOE_BASE_PTR, GPIOF_BASE_PTR, GPIOG_BASE_PTR, GPIOH_BASE_PTR, GPIOI_BASE_PTR }
 
