@@ -46,7 +46,7 @@
 #define FLASH_256K  (1<<18)
 #define FLASH_512K  (1<<19)
 #define FLASH_1024K (1<<20)
-
+#define FLASH_2048K (1<<21)
 /****************** Include the MCU header files and basic types **************/
 #include "main.h"
 /******************************************************************************/

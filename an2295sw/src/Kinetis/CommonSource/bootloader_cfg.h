@@ -69,7 +69,9 @@
 #elif defined(KINETIS_K)
   #if defined(KINETIS_K60)
     #include "AN2295_TWR_K60_cfg.h"
-  #endif
+#elif defined(KINETIS_K65)
+    #include "AN2295_TWR_K65_cfg.h"
+#endif
 
 #endif
 

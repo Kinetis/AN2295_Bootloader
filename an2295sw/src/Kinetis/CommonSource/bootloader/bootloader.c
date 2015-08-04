@@ -336,7 +336,7 @@ int __main(void)
   if(enableBootMode)
   {
 	  //unsigned long systick_cnt;
-	  unsigned int i;    
+	  unsigned int i, j;    
     
 #if BOOTLOADER_CRC_ENABLE == 1
       CRC_Init();    
@@ -566,7 +566,23 @@ int __main(void)
             #endif  
           }
           
-          length >>= 2;    // divide by four
+          
+          if((length % 4) == 0)
+          {
+              length >>= 2;    // divide by four
+          }
+          else
+          {
+            
+              for(j = 0; j < (length % 4); j++)
+              {
+                write_buffer[i + j] =  0xFF;
+              }
+              length >>= 2;    // divide by four
+              length += 1;
+          }
+          
+          
           
           // check the CRC of input data
           
