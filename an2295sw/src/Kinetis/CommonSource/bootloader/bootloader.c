@@ -574,7 +574,7 @@ int __main(void)
           else
           {
             
-              for(j = 0; j < (length % 4); j++)
+              for(j = 0; j < (4 - (length % 4)); j++)
               {
                 write_buffer[i + j] =  0xFF;
               }
