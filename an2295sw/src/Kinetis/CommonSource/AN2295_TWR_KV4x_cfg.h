@@ -16,10 +16,6 @@
 
 #include "MKV46F15.h"
 
-
-#define KINETIS_MODEL KV46_150MHz
-
-
 #define FLASH_PROT_SECTION 0x4000
 
 // Bus clock frequency

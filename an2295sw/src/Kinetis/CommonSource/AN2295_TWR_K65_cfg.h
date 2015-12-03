@@ -16,8 +16,6 @@
 
 #include "MK65F18.h"
 
-#define KINETIS_MODEL K65_180MHz
-
 #define FLASH_PROT_SECTION 0x4000
 
 #define BOOT_BUS_CLOCK        (32768 * 640)

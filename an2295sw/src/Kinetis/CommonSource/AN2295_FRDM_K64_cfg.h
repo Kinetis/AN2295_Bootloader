@@ -14,16 +14,15 @@
 //KL1_48MHz
 //KL2_48MHz KL25_48MHz
 
-#include "MKV10Z7.h"
+#include "MK64F12.h"
 
-#define FLASH_PROT_SECTION (0x1000)
+#define FLASH_PROT_SECTION (KINETIS_FLASH /32)
 
-// Bus clock frequency
-#define BOOT_BUS_CLOCK        (32768*640)              //(48000000)      //
+#define BOOT_BUS_CLOCK        (32768 * 640)
 
 /** Kinetis Flash memory size */
 
-#define KINETIS_FLASH FLASH_32K
+#define KINETIS_FLASH FLASH_512K
 
 /** Bootloader flash protection */
 #define BOOTLOADER_FLASH_PROTECTION 0
@@ -52,7 +51,7 @@
 
 #define BOOT_UART_GPIO_PIN_RX   16  
 
-#define BOOT_UART_GPIO_PIN_TX   17  
+#define BOOT_UART_GPIO_PIN_TX   17 
 
 /**************************************************/
 /* Actual used PIN reset setting */
@@ -60,7 +59,7 @@
 
 #define BOOT_PIN_ENABLE_GPIO_BASE  PTC_BASE_PTR   
 
-#define BOOT_PIN_ENABLE_NUM        7          
+#define BOOT_PIN_ENABLE_NUM        6          
 
 
 /**************************************************/
@@ -75,31 +74,56 @@
 
 #define BOOTLOADER_AUTO_TRIMMING    1 
 
-#define BOOTLOADER_PIN_ENABLE       0
+#define BOOTLOADER_PIN_ENABLE       1
 /**************************************************/
 /** CALIBRATION OF BOOTLOADER TRIM SETTINGS */
 #define BOOT_CALIBRATION_GPIO_BASE  PTC_BASE_PTR
 
 /* Description string */
-#define KINETIS_MODEL_STR "KV1"
+#define KINETIS_MODEL_STR "K60"
 
-  #define SRS_REG               RCM_SRS0
-  #define SRS_POR_MASK          RCM_SRS0_POR_MASK
-  
-  #define FLASH_INIT_FLASH_CLOCK        ;//SIM_CLKDIV1 |= SIM_CLKDIV1_OUTDIV4(2);
-  #define FLASH_BASE_PTR                FTFA_BASE_PTR
-  #define FLASH_FSTAT                   FTFA_FSTAT                                  
-  #define FLASH_FSTAT_CCIF_MASK         FTFA_FSTAT_CCIF_MASK
-  #define FLASH_FSTAT_ACCERR_MASK       FTFA_FSTAT_ACCERR_MASK
-  #define FLASH_FSTAT_FPVIOL_MASK       FTFA_FSTAT_FPVIOL_MASK
-  #define FLASH_FSTAT_RDCOLERR_MASK     FTFA_FSTAT_RDCOLERR_MASK
-  #define FLASH_FSTAT_MGSTAT0_MASK      FTFA_FSTAT_MGSTAT0_MASK                            
-  
-  #define FLASH_PROGRAM                 FLASH_ProgramSectionByLongs                                  
-                                    
-  #define INIT_CLOCKS_TO_MODULES    SIM_SCGC4 |= (SIM_SCGC4_UART0_MASK | SIM_SCGC4_UART1_MASK ); \
+//Register
+#ifndef  MC_SRSL
+    #define SRS_REG               RCM_SRS0
+    #define SRS_POR_MASK          RCM_SRS0_POR_MASK
+#else
+    #define SRS_REG               MC_SRSL
+    #define SRS_POR_MASK          MC_SRSL_POR_MASK
+#endif
+
+#define FTFE
+
+#ifdef FTFE
+    #define FLASH_INIT_FLASH_CLOCK SIM_CLKDIV1 |= SIM_CLKDIV1_OUTDIV4(1);
+    #define FLASH_BASE_PTR                FTFE_BASE_PTR
+    #define FLASH_FSTAT                   FTFE_FSTAT                                  
+    #define FLASH_FSTAT_CCIF_MASK         FTFE_FSTAT_CCIF_MASK
+    #define FLASH_FSTAT_ACCERR_MASK       FTFE_FSTAT_ACCERR_MASK
+    #define FLASH_FSTAT_FPVIOL_MASK       FTFE_FSTAT_FPVIOL_MASK
+    #define FLASH_FSTAT_RDCOLERR_MASK     FTFE_FSTAT_RDCOLERR_MASK
+    #define FLASH_FSTAT_MGSTAT0_MASK      FTFE_FSTAT_MGSTAT0_MASK 
+
+    #define FLASH_PROGRAM                 FLASH_ProgramSectionByPhrases
+
+#else
+
+    #define FLASH_INIT_FLASH_CLOCK SIM_CLKDIV1 |= SIM_CLKDIV1_OUTDIV4(1);
+    #define FLASH_BASE_PTR                FTFL_BASE_PTR
+    #define FLASH_FSTAT                   FTFL_FSTAT                                  
+    #define FLASH_FSTAT_CCIF_MASK         FTFL_FSTAT_CCIF_MASK
+    #define FLASH_FSTAT_ACCERR_MASK       FTFL_FSTAT_ACCERR_MASK
+    #define FLASH_FSTAT_FPVIOL_MASK       FTFL_FSTAT_FPVIOL_MASK
+    #define FLASH_FSTAT_RDCOLERR_MASK     FTFL_FSTAT_RDCOLERR_MASK
+    #define FLASH_FSTAT_MGSTAT0_MASK      FTFL_FSTAT_MGSTAT0_MASK 
+
+    #define FLASH_PROGRAM                 FLASH_ProgramSectionByLongs
+
+#endif
+
+#define INIT_CLOCKS_TO_MODULES    SIM_SCGC1 |= 0xffffffff; \
+                                    SIM_SCGC4 |= 0xffffffff; \
                                     SIM_SCGC5 |= 0xffffffff; \
-                                    SIM_SCGC6 |= SIM_SCGC6_FTF_MASK;
+                                    SIM_SCGC6 |= 0xffffffff;
 
 /******************************************************************************
 *
@@ -108,7 +132,8 @@
 *
 *
 ******************************************************************************/
-
+                                    
+#define WDG_ResetMCU()        WDOG_UNLOCK = 0xd928;  WDOG_UNLOCK = 0xc520;
 #define WDG_Disable()         WDOG_UNLOCK = 0xC520;  WDOG_UNLOCK = 0xD928; WDOG_STCTRLH &= ~WDOG_STCTRLH_WDOGEN_MASK;               /* Disable watchdog */ 
 #define WDG_Enable()          //WDOG_UNLOCK = 0xC520;  WDOG_UNLOCK = 0xD928; WDOG_STCTRLH |= WDOG_STCTRLH_WDOGEN_MASK;               /* Enable watchdog Already enabled*/ 
 #define WDG_Refresh()         WDOG_REFRESH = 0xA602; WDOG_REFRESH = 0xB480;
@@ -121,7 +146,7 @@
 #define INTERRUPT_VECTORS 0x0000
 
 /* Start address of relocated interrutp vector table */
-#define RELOCATED_VECTORS 0x1000 
+#define RELOCATED_VECTORS 0x4000 
 
 /* Flash start address */
 #define USER_FLASH_START RELOCATED_VECTORS
@@ -139,7 +164,7 @@
 #define FLASH_WRITE_PAGE 128
 
 /* Size of erase block */
-#define FLASH_ERASE_PAGE 1024
+#define FLASH_ERASE_PAGE 2048
 
 /* Maximal length of ID_STRING */
 //#define ID_STRING_MAX 5

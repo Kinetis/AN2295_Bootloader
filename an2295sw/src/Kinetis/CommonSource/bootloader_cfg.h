@@ -44,6 +44,8 @@
     #include "AN2295_FRDM_KL46Z_cfg.h"
   #elif defined(KINETIS_KL26)
     #include "AN2295_FRDM_KL26Z_cfg.h"
+  #elif defined(KINETIS_KL03)
+    #include "AN2295_FRDM_KL03Z_cfg.h"
   #endif
 
 #elif defined(KINETIS_M)
@@ -69,6 +71,8 @@
 #elif defined(KINETIS_K)
   #if defined(KINETIS_K60)
     #include "AN2295_TWR_K60_cfg.h"
+#elif defined(KINETIS_K64)
+    #include "AN2295_FRDM_K64_cfg.h"
 #elif defined(KINETIS_K65)
     #include "AN2295_TWR_K65_cfg.h"
 #endif

@@ -16,8 +16,6 @@
 
 #include "MKL25Z128LK4.h"
 
-#define KINETIS_MODEL KL25_48MHz
-
 #define FLASH_PROT_SECTION (0x1000)
 
 #define BOOT_BUS_CLOCK        (32768*640)

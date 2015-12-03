@@ -16,9 +16,6 @@
 
 #include "MKE02Z2.h"
 
-
-#define KINETIS_MODEL KE02_20MHz
-
 #define FLASH_PROT_SECTION (0x1000)
 
 #define BOOT_BUS_CLOCK     (31250*512)

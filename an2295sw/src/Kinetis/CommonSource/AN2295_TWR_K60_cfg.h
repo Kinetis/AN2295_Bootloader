@@ -16,8 +16,6 @@
 
 #include "MK60D10.h"
 
-#define KINETIS_MODEL K60_100MHz
-
 #define FLASH_PROT_SECTION (KINETIS_FLASH /32)
 
 #define BOOT_BUS_CLOCK        (32768 * 640)

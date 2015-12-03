@@ -14,12 +14,11 @@
 //KL1_48MHz
 //KL2_48MHz KL25_48MHz
 
-#include "MKV10Z7.h"
+#include "MKL03Z4.h"
 
 #define FLASH_PROT_SECTION (0x1000)
 
-// Bus clock frequency
-#define BOOT_BUS_CLOCK        (32768*640)              //(48000000)      //
+#define BOOT_BUS_CLOCK     (8*1000*1000)                //ƒ¨»œ π”√ MCGIRCLK 8M
 
 /** Kinetis Flash memory size */
 
@@ -34,7 +33,9 @@
 
 /**************************************************/
 /* Actual used UART module */
-#define BOOT_UART_BASE UART0_BASE_PTR
+#define LPUART_USED
+
+#define BOOT_UART_BASE LPUART0_BASE_PTR
 
 /* Actual used UART module */
 /* A range of UART baudrates is (9600 - 115200) */
@@ -45,23 +46,22 @@
 #define BOOT_UART_GPIO_PORT PORTB_BASE_PTR
 
 /*  setting of multiplexer for UART alternative of pin */
-#define BOOT_PIN_UART_ALTERNATIVE 3
+#define BOOT_PIN_UART_ALTERNATIVE 2
 
 /*  setting of multiplexer for GPIO alternative of pin */
 #define BOOT_PIN_GPIO_ALTERNATIVE 1
 
-#define BOOT_UART_GPIO_PIN_RX   16  
+#define BOOT_UART_GPIO_PIN_RX   1  
 
-#define BOOT_UART_GPIO_PIN_TX   17  
+#define BOOT_UART_GPIO_PIN_TX   2  
 
 /**************************************************/
 /* Actual used PIN reset setting */
-#define BOOT_PIN_ENABLE_PORT_BASE  PORTC_BASE_PTR   
+#define BOOT_PIN_ENABLE_PORT_BASE  PORTB_BASE_PTR   
 
-#define BOOT_PIN_ENABLE_GPIO_BASE  PTC_BASE_PTR   
+#define BOOT_PIN_ENABLE_GPIO_BASE  PTB_BASE_PTR   
 
-#define BOOT_PIN_ENABLE_NUM        7          
-
+#define BOOT_PIN_ENABLE_NUM        0          
 
 /**************************************************/
 /** BOOTLOADER FEATURES SETTINGS */
@@ -75,13 +75,15 @@
 
 #define BOOTLOADER_AUTO_TRIMMING    1 
 
-#define BOOTLOADER_PIN_ENABLE       0
+#define BOOTLOADER_PIN_ENABLE       1
 /**************************************************/
 /** CALIBRATION OF BOOTLOADER TRIM SETTINGS */
-#define BOOT_CALIBRATION_GPIO_BASE  PTC_BASE_PTR
+#define BOOT_CALIBRATION_GPIO_BASE  PTA_BASE_PTR
 
 /* Description string */
-#define KINETIS_MODEL_STR "KV1"
+#define KINETIS_MODEL_STR "KL0"
+
+//Register
 
   #define SRS_REG               RCM_SRS0
   #define SRS_POR_MASK          RCM_SRS0_POR_MASK
@@ -97,8 +99,8 @@
   
   #define FLASH_PROGRAM                 FLASH_ProgramSectionByLongs                                  
                                     
-  #define INIT_CLOCKS_TO_MODULES    SIM_SCGC4 |= (SIM_SCGC4_UART0_MASK | SIM_SCGC4_UART1_MASK ); \
-                                    SIM_SCGC5 |= 0xffffffff; \
+  #define INIT_CLOCKS_TO_MODULES    SIM_SCGC5 |= 0xffffffff; \
+                                    SIM_SOPT2 |= SIM_SOPT2_LPUART0SRC(3); \
                                     SIM_SCGC6 |= SIM_SCGC6_FTF_MASK;
 
 /******************************************************************************
@@ -108,11 +110,11 @@
 *
 *
 ******************************************************************************/
-
-#define WDG_Disable()         WDOG_UNLOCK = 0xC520;  WDOG_UNLOCK = 0xD928; WDOG_STCTRLH &= ~WDOG_STCTRLH_WDOGEN_MASK;               /* Disable watchdog */ 
-#define WDG_Enable()          //WDOG_UNLOCK = 0xC520;  WDOG_UNLOCK = 0xD928; WDOG_STCTRLH |= WDOG_STCTRLH_WDOGEN_MASK;               /* Enable watchdog Already enabled*/ 
-#define WDG_Refresh()         WDOG_REFRESH = 0xA602; WDOG_REFRESH = 0xB480;
-
+                                    
+  #define WDG_ResetMCU();       SIM_SRVCOP = 0xAA; SIM_SRVCOP = 0x55;
+  #define WDG_Disable();        SIM_COPC = 0;               /* Disable watchdog */ 
+  #define WDG_Enable();         SIM_COPC = (0x0000000F & (1<<3));               /* Enable watchdog */ 
+  #define WDG_Refresh();        SIM_SRVCOP = 0x55; SIM_SRVCOP = 0xAA;
 
 /* Flash block count of this MCU */
 #define FLASH_BLOCK_CNT 1

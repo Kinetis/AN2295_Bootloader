@@ -16,9 +16,6 @@
 
 #include "MKE06Z4.h"
 
-
-#define KINETIS_MODEL KE06_48MHz
-
 #define FLASH_PROT_SECTION (0x1000)
 
 #define BOOT_BUS_CLOCK     (37500*640)

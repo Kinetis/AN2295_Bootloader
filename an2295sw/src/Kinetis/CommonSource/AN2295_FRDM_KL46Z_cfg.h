@@ -16,9 +16,6 @@
 
 #include "MKL46Z4.h"
 
-
-#define KINETIS_MODEL KL46_48MHz
-
 #define FLASH_PROT_SECTION (0x1000)
 
 #define BOOT_BUS_CLOCK        (32768*640)
