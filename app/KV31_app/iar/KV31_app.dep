@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2620368530</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\debug\obj\fsl_common.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\pin_mux.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_clock.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_ewm.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\board.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\clock_config.__cstat.et</file>
+      <file>$PROJ_DIR$\..\board.h</file>
+      <file>$PROJ_DIR$\..\board.c</file>
+      <file>$PROJ_DIR$\..\clock_config.c</file>
+      <file>$PROJ_DIR$\debug\obj\clock_config.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_gpio.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_flash.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_ewm.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_common.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_clock.o</file>
+      <file>$PROJ_DIR$\debug\KV31_app.out</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_notifier.o</file>
+      <file>$PROJ_DIR$\debug\obj\startup_MKV31F51212.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_shell.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_debug_console.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_wdog.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_sim.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_smc.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_uart.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\system_MKV31F51212.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_debug_console.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_notifier.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_sbrk.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_shell.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\KV31_app.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xtgmath.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\debug\list\KV31_app.map</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\..\clock_config.h</file>
+      <file>$PROJ_DIR$\..\pin_mux.c</file>
+      <file>$PROJ_DIR$\..\pin_mux.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\arm_common_tables.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\arm_const_structs.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\arm_math.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_armcc.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_armcc_V6.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\cmsis_gcc.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\core_cm4.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\..\CMSIS\Include\core_cmSimd.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\MKV31F51212.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\fsl_device_registers.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\MKV31F51212_features.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_clock.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_clock.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_common.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_common.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_ewm.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_ewm.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_flash.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_flash.h</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_sbrk.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_wdog.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_uart.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_smc.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_sim.o</file>
+      <file>$PROJ_DIR$\debug\obj\pin_mux.o</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_lpuart.o</file>
+      <file>$PROJ_DIR$\debug\obj\board.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\system_MKV31F51212.o</file>
+      <file>$PROJ_DIR$\debug\obj\main.o</file>
+      <file>$PROJ_DIR$\debug\obj\clock_config.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\pin_mux.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_clock.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_common.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_ewm.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_flash.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_gpio.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_lpuart.pbi</file>
+      <file>$PROJ_DIR$\debug\obj\main.pbi</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_gpio.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_gpio.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_lpuart.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_lpuart.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_port.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_sim.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_sim.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_smc.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_smc.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_uart.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_uart.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_wdog.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_wdog.h</file>
+      <file>$PROJ_DIR$\..\main.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\system_MKV31F51212.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\iar\startup_MKV31F51212.s</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\system_MKV31F51212.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_debug_console.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_debug_console.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_notifier.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_notifier.h</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_sbrk.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_shell.c</file>
+      <file>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_shell.h</file>
+      <file>$PROJ_DIR$\MKV31F512xxx12_flash.icf</file>
+      <file>$PROJ_DIR$\debug\obj\board.o</file>
+      <file>$PROJ_DIR$\debug\KV31_app.srec</file>
+      <file>$PROJ_DIR$\debug\obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_wdog.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_uart.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_debug_console.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_sim.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_gpio.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_flash.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\system_MKV31F51212.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_lpuart.__cstat.et</file>
+      <file>$PROJ_DIR$\debug\obj\fsl_smc.__cstat.et</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 15 51</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\board.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 122</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 85</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36 30 32 34 35 37 31 33 73 48 44 45 46 47 68 67 63 65 38 39 64 66 113 69 71 114 6 54 98</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35 38 34 48 47 68 30 67 114 31 37 36 46 32 113 73 6 33 44 45 71 69 63 64 54 65 66 39 98</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\clock_config.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71 105 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 33 32 65 71 30 38 73 54 45 69 63 105 48 36 68 34 31 35 37 46 47 67 113 66 39 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\debug\KV31_app.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 51</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 123</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 121 122 9 14 13 19 10 84 81 80 87 83 17 86 50 53 49 52</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\pin_mux.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 83</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 89</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71 101</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 35 34 67 36 30 64 47 48 68 31 37 32 46 113 101 44 45 71 33 69 63 38 73 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_clock.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 90</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 71 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 36 34 35 30 67 38 48 68 31 37 32 46 113 73 44 45 71 33 69 63 64 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_common.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 91</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 0</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71 114</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73 47 38 36 34 35 30 67 65 48 68 31 37 32 46 113 114 44 45 71 33 69 63 66 39 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_ewm.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 12</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 92</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 3</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 75 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 63 69 45 32 73 30 64 44 71 33 48 36 68 34 31 35 37 46 47 67 113 38 75 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_flash.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 93</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 130</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 71 32 39 30 66 44 33 45 69 63 36 73 48 68 34 31 35 37 46 47 67 113 65 38 77 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_gpio.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 94</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 129</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 98 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36 30 39 34 35 67 66 47 48 68 31 37 32 46 113 73 44 45 71 33 69 63 65 38 98 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_lpuart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 84</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 133</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 100 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32 45 39 69 63 66 30 44 71 33 36 73 48 68 34 31 35 37 46 47 67 113 65 38 100 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_sim.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 82</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 21</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 128</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 103 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47 36 34 35 30 67 64 48 68 31 37 32 46 113 73 44 45 71 33 69 63 38 103 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_smc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 81</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 134</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 105 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 32 44 71 30 64 73 45 69 63 48 36 68 34 31 35 37 46 47 67 113 38 105 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_uart.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 80</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 126</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 107 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69 63 39 45 32 66 30 73 44 71 33 36 48 68 34 31 35 37 46 47 67 113 65 38 107 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\drivers\fsl_wdog.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 125</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 109 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 44 33 32 71 30 64 73 45 69 63 48 36 68 34 31 35 37 46 47 67 113 38 109 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 87</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 96</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 124</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 68 67 63 36 30 32 34 35 37 31 33 65 38 39 64 66 113 69 114 73 48 44 45 46 47 71 6 54 98 56</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56 67 36 33 32 73 6 113 30 46 98 114 54 69 63 64 38 48 68 47 65 66 34 31 35 37 39 44 45 71</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\system_MKV31F51212.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 131</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36 30 32 34 35 37 31 33 68 67 63 65 38 39 64 66 113 69</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 30 31 37 69 63 34 35 66 39 68 32 33 67 113 36 64 38</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\iar\startup_MKV31F51212.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_debug_console.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 127</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40 30 32 34 35 37 31 33 46 43 41 42 114 73 48 44 36 45 47 68 67 63 65 38 39 64 66 113 69 71 107 100</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33 32 30 43 107 46 36 64 73 40 114 100 34 31 35 37 42 48 68 47 69 63 38 132 41 44 45 71 67 113 65 66 39</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_notifier.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 117 73 48 30 32 34 35 37 31 33 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69 63 39 45 32 66 30 44 71 33 36 73 48 68 34 31 35 37 46 47 67 113 65 38 117 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_sbrk.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 78</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\devices\MKV31F51212\utilities\fsl_shell.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 48 30 32 34 35 37 31 33 120 73 44 36 45 46 47 68 67 63 65 38 39 64 66 113 69 71</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30 39 45 66 34 35 32 69 63 31 37 44 71 36 120 33 73 48 68 46 47 67 113 65 38 64</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

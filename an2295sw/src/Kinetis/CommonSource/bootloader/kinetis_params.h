@@ -57,10 +57,6 @@
 #endif
 
 //  size of one protection section depends on flash size in Bytes (protected block = flash size / 32)
-#ifndef FLASH_PROT_SECTION
-  #error There need define FLASH_PROT_SECTION first.
-#endif
-
 
 #ifndef KINETIS_MODEL_STR  
   #error There need define KINETIS_MODEL_STR frist.

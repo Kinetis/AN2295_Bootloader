@@ -45,7 +45,9 @@ extern LWord FLASH_FlashCommandSequenceStart(Byte index);
 void FLASH_Initialization(void)
 {
   LWord i;
-  volatile Byte* ptr_FlashCommandSequenceStart = ((Byte*)FLASH_FlashCommandSequenceStart - 1);
+  volatile Byte* ptr_FlashCommandSequenceStart;
+  
+  ptr_FlashCommandSequenceStart = ((Byte*)FLASH_FlashCommandSequenceStart - 1);
   
   //  initialize pointer to ram function 
   //  copy function from ROM to RAM

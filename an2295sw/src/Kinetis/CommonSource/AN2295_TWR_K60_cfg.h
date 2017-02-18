@@ -16,16 +16,12 @@
 
 #include "MK60D10.h"
 
-#define FLASH_PROT_SECTION (KINETIS_FLASH /32)
-
 #define BOOT_BUS_CLOCK        (32768 * 640)
 
 /** Kinetis Flash memory size */
 
 #define KINETIS_FLASH FLASH_512K
 
-/** Bootloader flash protection */
-#define BOOTLOADER_FLASH_PROTECTION 0
 
 /** Boot timeout after POR (Power On Reset) for wait to connect Master **/
 /** BOOT_WAITING_TIMEOUT * 10ms **/
@@ -76,8 +72,6 @@
 
 #define BOOTLOADER_PIN_ENABLE       1
 /**************************************************/
-/** CALIBRATION OF BOOTLOADER TRIM SETTINGS */
-#define BOOT_CALIBRATION_GPIO_BASE  PTC_BASE_PTR
 
 /* Description string */
 #define KINETIS_MODEL_STR "K60"

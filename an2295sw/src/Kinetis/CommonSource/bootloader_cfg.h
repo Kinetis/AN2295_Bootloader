@@ -66,11 +66,15 @@
     #include "AN2295_TWR_KV4x_cfg.h"
   #elif defined(KINETIS_KV10)
     #include "AN2295_TWR_KV10_cfg.h"
+  #elif defined(KINETIS_KV31)
+    #include "AN2295_FRDM_KV31_cfg.h"
   #endif
 
 #elif defined(KINETIS_K)
   #if defined(KINETIS_K60)
     #include "AN2295_TWR_K60_cfg.h"
+  #elif defined(KINETIS_K10)
+    #include "AN2295_XJ_K10_cfg.h"
 #elif defined(KINETIS_K64)
     #include "AN2295_FRDM_K64_cfg.h"
 #elif defined(KINETIS_K65)
