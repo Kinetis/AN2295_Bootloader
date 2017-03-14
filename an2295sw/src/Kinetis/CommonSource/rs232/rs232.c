@@ -24,21 +24,37 @@
 ******************************************************************/
 void UART_Initialization(void)
 {
+  
+  LPUART_CTRL_REG(BOOT_UART_BASE) &= ~LPUART_CTRL_TE_MASK | LPUART_CTRL_RE_MASK;
+  
   LPUART_BAUD_REG(BOOT_UART_BASE) |= LPUART_BAUD_SBR(LPUART_SBR);
+  
   
   LPUART_CTRL_REG(BOOT_UART_BASE) |= LPUART_CTRL_TE_MASK | LPUART_CTRL_RE_MASK;
 
-  while(UART_IsChar())
-    (void)UART_GetChar();
+  if(UART_IsChar())
+  {
+      (void)UART_GetChar();
+  }
+
+    
 }   
+
+
+
 
 /**************************************************************//*!
 * Function for sending one character   
 ******************************************************************/
 void UART_PutChar(unsigned char data)
 {
-  while((LPUART_STAT_REG(BOOT_UART_BASE) & LPUART_STAT_TC_MASK) == 0){};
+  
+  while(!(LPUART_STAT_REG(BOOT_UART_BASE) & LPUART_STAT_TDRE_MASK))
+  {
+    ;
+  }
   LPUART_DATA_REG(BOOT_UART_BASE) = data;
+ 
 }
 
 

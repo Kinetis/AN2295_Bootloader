@@ -91,9 +91,8 @@
   
   #define FLASH_PROGRAM                 FLASH_ProgramSectionByLongs                                  
                                     
-  #define INIT_CLOCKS_TO_MODULES    SIM_SCGC4 |= (SIM_SCGC4_UART0_MASK); \
-                                    SIM_SCGC5 |= 0xffffffff; \
-                                    SIM_SOPT2 |= SIM_SOPT2_LPUART0SRC(3); \
+  #define INIT_CLOCKS_TO_MODULES    SIM_SCGC5 |= SIM_SCGC5_LPUART0_MASK | SIM_SCGC5_PORTA_MASK | SIM_SCGC5_PORTC_MASK ; \
+                                    SIM_SOPT2 |= SIM_SOPT2_LPUART0SRC(3);\
                                     SIM_SCGC6 |= SIM_SCGC6_FTF_MASK;
 
 /******************************************************************************

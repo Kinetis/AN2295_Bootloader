@@ -61,6 +61,8 @@
 #define BOOT_CMD_QUIT 'Q'
 #define BOOT_CMD_READ 'R'
 
+#define RETRY_TIMES    100
+
 
 /** Bootloader protocol version */
 #define BOOTLOADER_PROTOCOL_VERSION VERSION_KINETIS

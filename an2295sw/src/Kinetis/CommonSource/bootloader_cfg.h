@@ -70,6 +70,11 @@
     #include "AN2295_FRDM_KV31_cfg.h"
   #endif
 
+#elif defined(KINETIS_W)
+  #if defined(KINETIS_KW41)
+    #include "AN2295_FRDM_KW41_cfg.h"
+  #endif
+
 #elif defined(KINETIS_K)
   #if defined(KINETIS_K60)
     #include "AN2295_TWR_K60_cfg.h"
